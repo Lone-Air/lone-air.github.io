@@ -1,0 +1,32 @@
+#html<5>
+head{
+    word-wrap:true;
+}
+#title<LMFS>
+meta{
+charset: utf8;
+/
+}
+style{
+    [
+    .title{
+width: 300px;
+height: 100px;
+margin: 50px auto;
+line-hight: 100px;
+text-align: center;
+overflow: hidden;
+    }
+    ]
+}
+/head{}
+body{}
+div{
+class: title
+}
+h1{
+end:true;
+inner: [Welcome to LMFS]
+}
+/div{}
+/body{}
