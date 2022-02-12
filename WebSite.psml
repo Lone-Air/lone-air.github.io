@@ -10,10 +10,10 @@ charset: utf8;
 style{
     [
     .title{
-width: 300px;
+width: 100%;
 height: 30px;
-margin: 50px auto;
-line-hight: 100px;
+margin: 15px auto;
+line-hight: 30px;
 text-align: center;
 overflow: hidden;
     }
