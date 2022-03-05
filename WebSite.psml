@@ -32,8 +32,8 @@ inner: [Welcome to LMFS]
 /div{}
 audio{
 source: audio/Internationale.mp3
-audoplay: true
-loop: true
+autoplay: autoplay
+loop: loop
 end: true
 controls: controls
 }
