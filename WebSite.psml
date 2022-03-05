@@ -31,7 +31,7 @@ inner: [Welcome to LMFS]
 }
 button{
 onclick: [Internationale()]
-             inner: Play Internationale
+             inner: [Play Internationale]
              end:true
              id: Play
 }
@@ -48,10 +48,10 @@ script{
         function Internationale(){
             var I=document.getElementById("Internationale");
             var PL=document.getElementById("Play");
-            var PMP=prompt("If this song is not welcome in your country, please do not play it.", "no")
+            var PMP=prompt("If this song IS NOT welcome -in your country-, please do not play it.", "no")
                 if(PMP=="yes"){
                     I.play()
-                        PL.display="none"
+                    PL.style.display="none"
                 }
         }
     ]
