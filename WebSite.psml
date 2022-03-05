@@ -13,7 +13,7 @@ style{
 width: 300px;
 margin: 10px auto;
 padding: 10px 0px;
-         text-align: center;
+text-align: center;
         }
     ]
 }
@@ -48,7 +48,7 @@ script{
         function Internationale(){
             var I=document.getElementById("Internationale");
             var PL=document.getElementById("Play");
-            var PMP=prompt("If this song IS NOT welcome -in your country-, please do not play it.", "no")
+            var PMP=prompt("If this song IS NOT welcome -in your country-, please do not play it. (type 'yes' and submit to play)", "no")
                 if(PMP=="yes"){
                     I.play()
                     PL.style.display="none"
