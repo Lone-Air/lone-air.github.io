@@ -11,8 +11,8 @@ style{
     [
     .title{
 width: 300px;
-margin: 50px auto;
-padding: 50px 20px;
+margin: 10px auto;
+padding: 10px 0px;
 text-align: center;
     }
     ]
@@ -30,4 +30,10 @@ inner: [Welcome to LMFS]
            ]
 }
 /div{}
+audio{
+source: audio/Internationale.mp3
+audoplay: true
+loop: true
+end: true
+}
 /body{}
