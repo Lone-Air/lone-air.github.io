@@ -5,16 +5,16 @@ head{
 #title<LMFS>
 meta{
 charset: utf8;
-/
+         /
 }
 style{
     [
-    .title{
+        .title{
 width: 300px;
 margin: 10px auto;
 padding: 10px 0px;
-text-align: center;
-    }
+         text-align: center;
+        }
     ]
 }
 /head{}
@@ -29,10 +29,30 @@ inner: [Welcome to LMFS]
            color: #1f93ff
            ]
 }
+button{
+onclick: [Internationale()]
+             inner: Play Internationale
+             end:true
+             id: Play
+}
 /div{}
 audio{
 source: audio/Internationale.mp3
-loop: loop
-end: true
+            loop: loop
+            end: true
+            id: Internationale
 }
 /body{}
+script{
+    [
+        function Internationale(){
+            var I=document.getElementById("Internationale");
+            var PL=document.getElementById("Play");
+            var PMP=prompt("If this song is not welcome in your country, please do not play it.", "no")
+                if(PMP=="yes"){
+                    I.play()
+                        PL.display="none"
+                }
+        }
+    ]
+}

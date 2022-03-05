@@ -21,8 +21,23 @@ text-align: center;
 <h3 style='
 color: #1f93ff
 '>Welcome to LMFS</h3>
+<button onclick='Internationale()' id='Play'>PlayInternationale</button>
 </div>
-<audio loop='loop'><source src='audio/Internationale.mp3' type='audio/mpeg'>
+<audio loop='loop' id='Internationale'><source src='audio/Internationale.mp3' type='audio/mpeg'>
 </audio>
 </body>
-</html>
+<script language="javascript">
+
+
+function Internationale(){
+var I=document.getElementById("Internationale");
+var PL=document.getElementById("Play");
+var PMP=prompt("If this song&no:no&not welcome&no-no&your country, please do not play it.", "no")
+if(PMP=="yes"){
+I.play()
+PL.display="none"
+}
+}
+
+
+</script></html>
