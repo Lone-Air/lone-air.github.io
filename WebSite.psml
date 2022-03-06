@@ -7,7 +7,7 @@ meta{
 charset: utf8;
          /
 }
-style{
+style(text/css){
     [
         .title{
 width: 300px;
