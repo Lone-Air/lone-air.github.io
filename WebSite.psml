@@ -73,7 +73,7 @@ script(javascript){
                         IC.pause()
                     }
                     PL.style.display="none"
-                    PL1.style.display="display"
+                    PL1.style.display="inline"
                 }
         }
 
@@ -89,7 +89,7 @@ script(javascript){
                         I.pause()
                     }
                     PL1.style.display="none"
-                    PL.style.display="display"
+                    PL.style.display="inline"
                 }
         }
     ]
