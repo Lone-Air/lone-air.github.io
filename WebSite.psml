@@ -67,6 +67,13 @@ br: true
 href: [/whoissth.html]
 }
 
+a{
+inner: [<font color="yellow">Nice♂ Looking♂ </font>]
+href: [videos/fraud.mp4]
+end: true
+br: true
+}
+
 /div{}
 
 audio{
