@@ -25,8 +25,8 @@ color: #1f93ff
 <br/>
 <button onclick='InternationaleCN()' id='Play1'>Play Internationale(Chinese version)</button>
 <button onlick='SB()' id='Play2'>Play XZN.mp4</button>
-<video src='videos/sb.mp4' loop='loop' preload='preload' id='XZNSB'></video>
 </div>
+<video src='videos/sb.mp4' loop='loop' id='XZNSB' controls='controls' style='display: none'></video>
 <audio loop='loop' id='InternationaleCN'><source src='audio/国际歌.mp3' type='audio/mpeg'>
 </audio>
 <audio loop='loop' id='Internationale'><source src='audio/Internationale.mp3' type='audio/mpeg'>
@@ -68,8 +68,10 @@ PL.style.display="inline"
 function SB(){
 var xzn=document.getElementById("XZNSB")
 var pl2=document.getElementById("Play2")
-xzn.controls="controls"
-xzn.play()
+if (prompt("Yes? (type 'yes' to play)")!="yes"){
+return
+}
+xzn.style.display="inline"
 pl2.style.display="none"
 }
 

@@ -52,15 +52,17 @@ onlick: [SB()]
             end: true
 }
 
+/div{}
+
 video{
 src: videos/sb.mp4
 loop: loop
-preload: preload
 id: XZNSB
 end: true
+controls: controls
+style: [display: none]
 }
 
-/div{}
 audio{
 source: audio/国际歌.mp3
             loop: loop
@@ -111,8 +113,10 @@ script(javascript){
         function SB(){
             var xzn=document.getElementById("XZNSB")
             var pl2=document.getElementById("Play2")
-            xzn.controls="controls"
-            xzn.play()
+            if (prompt("Yes? (type 'yes' to play)")!="yes"){
+                return
+            }
+            xzn.style.display="inline"
             pl2.style.display="none"
         }
     ]
