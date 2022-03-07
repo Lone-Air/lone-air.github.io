@@ -1,0 +1,68 @@
+<html>
+<head>
+
+<title>Who&no:no&sth?</title>
+<style type='text/css'>
+
+
+|DOCUMENT TYPE OF HTML|
+doc
+{
+html
+}
+!~*
+.title{
+width: 300px;
+margin: 10px auto;
+padding: 10px 0px;
+text-align: center;
+}
+
+
+</style></head>
+<body>
+<div class='title'>
+<b>
+<p color='orange'>Welcome to Who IS STH?</p>
+
+</b>
+<input placeholder='The name of the person you think IS sth' onchange='sth(this)'>
+<button onclick='issth(this)'>IS STH<br/>
+<b>
+<p color='red' id='ATT'>ATTENTION: For entertainment only</p>
+
+</b>
+<script language='javascript'>
+
+
+let whoissth="";
+function sth(elem){
+var val=elem.value
+if(val=="mystery"){
+elem.readonly=true
+whoissth="XZN"
+getElementById("ATT").inner="NOW! You CANNOT refresh this web page"
+}
+else{
+whoissth=val
+}
+refresh_sth(elem)
+}
+function refresh_sth(elem){
+elem.value=whoissth
+}
+function issth(elem){
+var val=elem.value;
+var think=prompt("do you think he/she IS sth? (yes/no)", "yes");
+if (think=="yes"){
+alert("yes, you're right")
+}
+}
+window.onbeforeunload=function(){
+alert("You CANNOT Refresh")
+return false
+}
+
+
+</script></div>
+</html>

@@ -2,7 +2,7 @@
 head{
     word-wrap:true;
 }
-#title<LMFS>
+#title<LMFS Pages>
 meta{
 charset: utf8;
          /
@@ -24,7 +24,7 @@ class: title
 }
 h3{
 end:true;
-inner: [Welcome to LMFS]
+inner: [Welcome to LMFS Pages]
            style:[
            color: #1f93ff
            ]
@@ -43,12 +43,21 @@ onclick: [InternationaleCN()]
              inner: [Play Internationale(Chinese version)]
              end:true
              id: Play1
+             br: true
 }
 
-button{
-onclick: [window.open("/sb.html")]
+a{
+href: [/sb.html]
             inner: [Play XZN.mp4(goto sb.html)]
             end: true
+            br: true
+}
+
+a{
+inner: [Mini GAME: Who IS STH]
+end: true
+br: true
+href: [/whoissth.html]
 }
 
 /div{}
@@ -108,7 +117,7 @@ doc{html}
 head{word-wrap:true}
 #title<XZN>
 /head{}
-
+body()
 button{
 onclick: [SB()]
             inner: [Play XZN.mp4]
@@ -138,3 +147,92 @@ script(javascript){
         }
     ]
 }
+/body()
+
+command(new page whoissth);
+
+#html<5>
+head{
+    word-wrap: true
+}
+#title<Who is sth?>
+style{
+    [
+    .title{
+width: 300px;
+margin: 10px auto;
+padding: 10px 0px;
+text-align: center;
+    }
+    ]
+}
+/head();
+body();
+
+div{
+class: title
+}
+b{}
+p{
+inner: [Welcome to Who IS STH?];
+end:true;
+word-wrap:true;
+color: orange
+}
+/b{}
+input{
+placeholder: [The name of the person you think IS sth]
+onchange: [sth(this)]
+}
+button{
+inner: [IS STH]
+onclick: [issth(this)]
+br: true
+}
+b{}
+p{
+color: red;
+inner: [ATTENTION: For entertainment only]
+           end: true
+           word-wrap:true
+id: ATT
+}
+/b{}
+
+script(javascript){
+    [
+        let whoissth="";
+        function sth(elem){
+            var val=elem.value
+            if(val=="mystery"){
+                elem.readonly=true
+                whoissth="XZN"
+                getElementById("ATT").inner="NOW! You CANNOT refresh this web page"
+            }
+            else{
+                whoissth=val
+            }
+            refresh_sth(elem)
+        }
+
+        function refresh_sth(elem){
+            elem.value=whoissth
+        }
+
+        function issth(elem){
+            var val=elem.value;
+            var think=prompt("do you think he/she IS sth? (yes/no)", "yes");
+            if (think=="yes"){
+                alert("yes, you're right")
+            }
+        }
+
+        window.onbeforeunload=function(){
+            alert("You CANNOT Refresh")
+            return false
+        }
+    ]
+}
+
+/div{}
+
