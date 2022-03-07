@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Download web site internal files</title>
+</head>
+<body>
+<input placeholder='e.g: index.html' id='lnk'>
+<button onclick='set_link()'>select</button>
+<button onclick='download()'>download</button>
+<a href='' download style='display: none' id='dwl'>
+<script language='javascript'>
+
+
+function set_link(){
+var dwl=document.getElementById("dwl")
+dwl.href=document.getElementById("lnk").value
+}
+function download(){
+var dwl=document.getElementById("dwl")
+dwl.click()
+}
+
+
+</script></body>
+</html>

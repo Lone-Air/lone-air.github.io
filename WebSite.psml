@@ -309,6 +309,7 @@ id: dwl
 }
 
 script(javascript){
+    [
     function set_link(){
         var dwl=document.getElementById("dwl")
         dwl.href=document.getElementById("lnk").value
@@ -318,6 +319,7 @@ script(javascript){
         var dwl=document.getElementById("dwl")
         dwl.click()
     }
+    ]
 }
 /body{}
 
