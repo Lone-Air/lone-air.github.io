@@ -27,7 +27,7 @@ text-align: center;
 <p style='color: orange'>Welcome to Who IS STH?</p>
 
 </b>
-<input placeholder='The name of the person you think IS sth' onchange='sth(this)'>
+<input placeholder='The name of the person you think IS sth' onchange='sth(this)' id='wis'>
 <button onclick='issth(this)'><font color="purple">IS STH</font></button>
 <br/>
 <b>
@@ -43,24 +43,27 @@ let supersth=0;
 function sth(elem){
 var val=elem.value
 if(val=="mystery"){
-elem.readonly=true
+elem.readonly="readonly"
 whoissth="XZN"
-getElementById("ATT").inner="NOW! You CANNOT refresh this web page"
+document.getElementById("ATT").inner="NOW! You CANNOT refresh this web page"
 supersth=1
 }
 else{
 whoissth=val
 }
-refresh_sth(elem)
+refresh_sth()
 }
-function refresh_sth(elem){
-elem.value=whoissth
+function refresh_sth(){
+document.getElementById("wis").value=whoissth
 }
 function issth(elem){
 var val=elem.value;
 var think=prompt("do you think "+whoissth+" IS sth? (yes/no)", "yes");
 if (think=="yes"){
 alert("yes, you're right")
+}
+else{
+alert("Oh no, I think"+whoissth+"IS sth")
 }
 }
 window.onbeforeunload=function(){
