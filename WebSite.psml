@@ -181,6 +181,14 @@ end:true;
 word-wrap:true;
 style: [color: orange]
 }
+font{
+id: whoissth
+inner: [sth is <nobody>]
+color: green
+end: true
+br: true
+word-wrap: true
+}
 /b{}
 input{
 placeholder: [The name of the person you think IS sth]
@@ -215,7 +223,7 @@ script(javascript){
                 elem.disabled=true
                 whoissth="XZN"
                 var ATT=document.getElementById("ATT")
-                ATT.innerHTML="NOW! You CANNOT refresh this web page"
+                ATT.innerHTML="WARNING: NOW! You CANNOT refresh this web page"
                 supersth=true
             }
             else{
@@ -226,6 +234,13 @@ script(javascript){
 
         function refresh_sth(){
             document.getElementById("wis").value=whoissth
+            var INFO=document.getElementById("whoissth")
+            if(whoissth==""){
+                INFO.innerHTML="sth is <nobody>"
+            }
+            else{
+                INFO.innerHTML="sth is "+whoissth
+            }
         }
 
         function issth(elem){

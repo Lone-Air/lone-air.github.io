@@ -26,6 +26,9 @@ text-align: center;
 <b>
 <p style='color: orange'>Welcome to Who IS STH?</p>
 
+<font id='whoissth' color='green'>sth&no:no&<nobody></font>
+<br/>
+
 </b>
 <input placeholder='The name of the person you think IS sth' onchange='sth(this)' id='wis'>
 <button onclick='issth(this)'><font color="purple">IS STH</font></button>
@@ -46,7 +49,7 @@ if(val=="mystery"){
 elem.disabled=true
 whoissth="XZN"
 var ATT=document.getElementById("ATT")
-ATT.innerHTML="NOW! You CANNOT refresh this web page"
+ATT.innerHTML="WARNING: NOW! You CANNOT refresh this web page"
 supersth=true
 }
 else{
@@ -56,6 +59,13 @@ refresh_sth()
 }
 function refresh_sth(){
 document.getElementById("wis").value=whoissth
+var INFO=document.getElementById("whoissth")
+if(whoissth==""){
+INFO.innerHTML="sth&no:no&<nobody>"
+}
+else{
+INFO.innerHTML="sth&no:no&"+whoissth
+}
 }
 function issth(elem){
 var val=elem.value;
