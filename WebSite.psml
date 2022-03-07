@@ -60,7 +60,7 @@ loop: loop
 id: XZNSB
 end: true
 controls: controls
-style: [display: none]
+/>style: [display: none]
 }
 
 audio{
@@ -111,6 +111,7 @@ script(javascript){
         }
 
         function SB(){
+            alert("TEST")
             var xzn=document.getElementById("XZNSB")
             var pl2=document.getElementById("Play2")
             if (prompt("Yes? (type 'yes' to play)")!="yes"){
