@@ -87,7 +87,7 @@ color: gray
 style:[font-size:6pt]
 end:true
 br: true
-inner: [Powered by github.io - Website by Mr. LM28 production]
+inner: [Powered by github.io --- Website by Mr. LM28 production]
 }
 /div{}
 
