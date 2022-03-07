@@ -169,6 +169,8 @@ text-align: center;
 /head();
 body();
 
+center{}
+
 div{
 class: title
 }
@@ -177,7 +179,7 @@ p{
 inner: [Welcome to Who IS STH?];
 end:true;
 word-wrap:true;
-color: orange
+style: [color: orange]
 }
 /b{}
 input{
@@ -185,19 +187,22 @@ placeholder: [The name of the person you think IS sth]
 onchange: [sth(this)]
 }
 button{
-inner: [IS STH]
+inner: [<font color="purple">IS STH</font>]
 onclick: [issth(this)]
 br: true
+end: true
 }
 b{}
 p{
-color: red;
+style: [color: red]
 inner: [ATTENTION: For entertainment only]
            end: true
            word-wrap:true
 id: ATT
 }
 /b{}
+
+/center{}
 
 script(javascript){
     [
@@ -221,7 +226,7 @@ script(javascript){
 
         function issth(elem){
             var val=elem.value;
-            var think=prompt("do you think he/she IS sth? (yes/no)", "yes");
+            var think=prompt("do you think "+whoissth+" IS sth? (yes/no)", "yes");
             if (think=="yes"){
                 alert("yes, you're right")
             }

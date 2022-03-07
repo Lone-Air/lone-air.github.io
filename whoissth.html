@@ -21,17 +21,20 @@ text-align: center;
 
 </style></head>
 <body>
+<center>
 <div class='title'>
 <b>
-<p color='orange'>Welcome to Who IS STH?</p>
+<p style='color: orange'>Welcome to Who IS STH?</p>
 
 </b>
 <input placeholder='The name of the person you think IS sth' onchange='sth(this)'>
-<button onclick='issth(this)'>IS STH<br/>
+<button onclick='issth(this)'><font color="purple">IS STH</font></button>
+<br/>
 <b>
-<p color='red' id='ATT'>ATTENTION: For entertainment only</p>
+<p style='color: red' id='ATT'>ATTENTION: For entertainment only</p>
 
 </b>
+</center>
 <script language='javascript'>
 
 
@@ -53,7 +56,7 @@ elem.value=whoissth
 }
 function issth(elem){
 var val=elem.value;
-var think=prompt("do you think he/she IS sth? (yes/no)", "yes");
+var think=prompt("do you think "+whoissth+" IS sth? (yes/no)", "yes");
 if (think=="yes"){
 alert("yes, you're right")
 }
