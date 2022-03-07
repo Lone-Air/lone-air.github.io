@@ -8,14 +8,13 @@
 <input placeholder='e.g: index.html' id='lnk'>
 <button onclick='set_link()'>select</button>
 <button onclick='download()'>download</button>
-<a href='' download id='dwl'></a>
+<a href='' download style='display: none' id='dwl'></a>
 <script language='javascript'>
 
 
 function set_link(){
 var dwl=document.getElementById("dwl")
 dwl.href=document.getElementById("lnk").value
-dwl.innerHTML=document.getElementById("lnk").value
 }
 function download(){
 var dwl=document.getElementById("dwl")

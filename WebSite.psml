@@ -304,7 +304,7 @@ onclick: [download()]
 a{
 href:;
 download;
-/>style: [display: none]
+style: [display: none]
 id: dwl
 end: true
 }
@@ -314,7 +314,6 @@ script(javascript){
     function set_link(){
         var dwl=document.getElementById("dwl")
         dwl.href=document.getElementById("lnk").value
-        dwl.innerHTML=document.getElementById("lnk").value
     }
 
     function download(){
