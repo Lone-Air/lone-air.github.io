@@ -219,9 +219,7 @@ script(javascript){
         let supersth=false;
         function sth(elem){
             var val=elem.value
-            elem=elem.split("<").join("&lt;")
-            elem=elem.split(">").join("&gt;")
-            elem=elem.split(" ").join("&nbsp;")
+            val=val.split("<").join("&lt;").split(">").join("&gt;").split(" ").split("&nbsp;")
             if(val=="mystery"){
                 elem.disabled=true
                 whoissth="XZN"
@@ -251,9 +249,6 @@ script(javascript){
             var think=prompt("do you think "+whoissth+" IS sth? (yes/no)", "yes");
             if (think=="yes"){
                 alert("yes, you're right")
-            }
-            else if(think==NULL){
-                return
             }
             else{
                 alert("Oh no, I think "+whoissth+" IS sth")
