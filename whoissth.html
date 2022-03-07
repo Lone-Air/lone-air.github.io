@@ -1,7 +1,7 @@
 <html>
 <head>
 
-<title>Who&no:no&sth?</title>
+<title>Who IS STH?</title>
 <style type='text/css'>
 
 
@@ -43,9 +43,10 @@ let supersth=0;
 function sth(elem){
 var val=elem.value
 if(val=="mystery"){
-elem.readonly="readonly"
+elem.disabled=true
 whoissth="XZN"
-document.getElementById("ATT").inner="NOW! You CANNOT refresh this web page"
+var ATT=document.getElementById("ATT")
+ATT.inner="NOW! You CANNOT refresh this web page"
 supersth=1
 }
 else{
