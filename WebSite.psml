@@ -54,6 +54,13 @@ href: [/sb.html]
 }
 
 a{
+href: [/df.html]
+          inner: [Download web site internal files]
+          end: true
+          br: true
+}
+
+a{
 inner: [Mini GAME: Who IS STH]
 end: true
 br: true
@@ -270,4 +277,47 @@ script(javascript){
 }
 
 /div{}
+
+command(new page df);
+
+#html<5>
+head{
+    word-wrap: true
+}
+#title<Download web site internal files>
+/head{}
+body{}
+input{
+placeholder: [e.g: index.html]
+id: lnk
+}
+button{
+inner: select
+end:true
+onclick: [set_link()]
+}
+button{
+inner: download
+end: true
+onclick: [download()]
+}
+a{
+href:;
+download;
+style: [display: none]
+id: dwl
+}
+
+script(javascript){
+    function set_link(){
+        var dwl=document.getElementById("dwl")
+        dwl.href=document.getElementById("lnk").value
+    }
+
+    function download(){
+        var dwl=document.getElementById("dwl")
+        dwl.click()
+    }
+}
+/body{}
 
