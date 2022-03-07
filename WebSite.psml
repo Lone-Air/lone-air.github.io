@@ -208,15 +208,15 @@ id: ATT
 script(javascript){
     [
         let whoissth="";
-        let supersth=0;
+        let supersth=false;
         function sth(elem){
             var val=elem.value
             if(val=="mystery"){
                 elem.disabled=true
                 whoissth="XZN"
                 var ATT=document.getElementById("ATT")
-                ATT.inner="NOW! You CANNOT refresh this web page"
-                supersth=1
+                ATT.innerHTML="NOW! You CANNOT refresh this web page"
+                supersth=true
             }
             else{
                 whoissth=val
@@ -234,14 +234,19 @@ script(javascript){
             if (think=="yes"){
                 alert("yes, you're right")
             }
+            else if(think==NULL){
+                return
+            }
             else{
-                alert("Oh no, I think"+whoissth+"IS sth")
+                alert("Oh no, I think "+whoissth+" IS sth")
             }
         }
 
         window.onbeforeunload=function(){
             if(supersth){
-                alert("You CANNOT Refresh")
+                while(1){
+                    alert("You CANNOT Refresh")
+                }
                 return false
             }
             else{
