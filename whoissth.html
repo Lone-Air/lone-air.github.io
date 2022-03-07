@@ -45,7 +45,9 @@ let whoissth="";
 let supersth=false;
 function sth(elem){
 var val=elem.value
-elem=elem.split("<").join("&lt;").split(">").join("&gt;").split(" ").join("&nbsp;")
+elem=elem.split("<").join("&lt;")
+elem=elem.split(">").join("&gt;")
+elem=elem.split(" ").join("&nbsp;")
 if(val=="mystery"){
 elem.disabled=true
 whoissth="XZN"
