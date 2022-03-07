@@ -183,7 +183,7 @@ style: [color: orange]
 }
 font{
 id: whoissth
-inner: [sth is <nobody>]
+inner: [sth IS <nobody>]
 color: green
 end: true
 br: true
@@ -236,10 +236,10 @@ script(javascript){
             document.getElementById("wis").value=whoissth
             var INFO=document.getElementById("whoissth")
             if(whoissth==""){
-                INFO.innerHTML="sth is <nobody>"
+                INFO.innerHTML="sth IS <nobody>"
             }
             else{
-                INFO.innerHTML="sth is "+whoissth
+                INFO.innerHTML="sth IS "+whoissth
             }
         }
 
