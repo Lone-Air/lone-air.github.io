@@ -74,6 +74,13 @@ end: true
 br: true
 }
 
+a{
+inner: [<font color="red">114514.mp4</font>]
+href: [videos/24-year-old.mp4]
+end:true
+br: true
+}
+
 /div{}
 
 audio{
