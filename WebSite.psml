@@ -183,7 +183,7 @@ style: [color: orange]
 }
 font{
 id: whoissth
-inner: [sth IS <nobody>]
+inner: [sth IS &lt;nobody&gt;[Ma�=]]
 color: green
 end: true
 br: true
@@ -219,6 +219,7 @@ script(javascript){
         let supersth=false;
         function sth(elem){
             var val=elem.value
+            elem=elem.split("<").join("&lt;").split(">").join("&gt;").split(" ").join("&nbsp;")
             if(val=="mystery"){
                 elem.disabled=true
                 whoissth="XZN"
@@ -236,7 +237,7 @@ script(javascript){
             document.getElementById("wis").value=whoissth
             var INFO=document.getElementById("whoissth")
             if(whoissth==""){
-                INFO.innerHTML="sth IS <nobody>"
+                INFO.innerHTML="sth IS &lt;nobody&gt;"
             }
             else{
                 INFO.innerHTML="sth IS "+whoissth
