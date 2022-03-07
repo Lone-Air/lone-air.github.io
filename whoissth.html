@@ -39,12 +39,14 @@ text-align: center;
 
 
 let whoissth="";
+let supersth=0;
 function sth(elem){
 var val=elem.value
 if(val=="mystery"){
 elem.readonly=true
 whoissth="XZN"
 getElementById("ATT").inner="NOW! You CANNOT refresh this web page"
+supersth=1
 }
 else{
 whoissth=val
@@ -62,8 +64,13 @@ alert("yes, you're right")
 }
 }
 window.onbeforeunload=function(){
+if(supersth){
 alert("You CANNOT Refresh")
 return false
+}
+else{
+return true
+}
 }
 
 
