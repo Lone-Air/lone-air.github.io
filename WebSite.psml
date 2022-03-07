@@ -183,7 +183,7 @@ style: [color: orange]
 }
 font{
 id: whoissth
-inner: [sth IS &lt;nobody&gt;[Ma�=]]
+inner: [sth IS &lt;nobody&gt;]
 color: green
 end: true
 br: true
