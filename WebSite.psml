@@ -45,6 +45,21 @@ onclick: [InternationaleCN()]
              id: Play1
 }
 
+button{
+onlick: [SB()]
+            inner: [Play XZN.mp4]
+            id: Play2
+            end: true
+}
+
+video{
+src: videos/sb.mp4
+loop: loop
+preload: preload
+id: XZNSB
+end: true
+}
+
 /div{}
 audio{
 source: audio/国际歌.mp3
@@ -91,6 +106,14 @@ script(javascript){
                     PL1.style.display="none"
                     PL.style.display="inline"
                 }
+        }
+
+        function SB(){
+            var xzn=document.getElementById("XZNSB")
+            var pl2=document.getElementById("Play2")
+            xzn.controls="controls"
+            xzn.play()
+            pl2.style.display="none"
         }
     ]
 }
