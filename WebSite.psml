@@ -46,22 +46,12 @@ onclick: [InternationaleCN()]
 }
 
 button{
-onclick: [SB()]
-            inner: [Play XZN.mp4]
-            id: Play2
+onclick: [window.open("/sb.html")]
+            inner: [Play XZN.mp4(goto sb.html)]
             end: true
 }
 
 /div{}
-
-video{
-src: videos/sb.mp4
-loop: loop
-id: XZNSB
-end: true
-controls: controls
-style: [display: none]
-}
 
 audio{
 source: audio/国际歌.mp3
@@ -109,8 +99,35 @@ script(javascript){
                     PL.style.display="inline"
                 }
         }
+    ]
+}
 
-        function SB(){
+command(new page sb)
+
+doc{html}
+head{word-wrap:true}
+#title<XZN>
+/head{}
+
+button{
+onclick: [SB()]
+            inner: [Play XZN.mp4]
+            id: Play2
+            end: true
+}!~*
+
+video{
+src: videos/sb.mp4
+loop: loop
+id: XZNSB
+end: true
+controls: controls
+style: [display: none]
+}
+
+script(javascript){
+    [
+    function SB(){
             var xzn=document.getElementById("XZNSB")
             var pl2=document.getElementById("Play2")
             if (prompt("Yes? (type 'yes' to play)")!="yes"){

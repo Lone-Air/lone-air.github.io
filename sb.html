@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>XZN</title>
+</head>
+<button onclick='SB()' id='Play2'>Play XZN.mp4</button>
+<video src='videos/sb.mp4' loop='loop' id='XZNSB' controls='controls' style='display: none'></video>
+<script language='javascript'>
+
+
+function SB(){
+var xzn=document.getElementById("XZNSB")
+var pl2=document.getElementById("Play2")
+if (prompt("Yes? (type 'yes' to play)")!="yes"){
+return
+}
+xzn.style.display="inline"
+pl2.style.display="none"
+}
+
+
+</script></html>
