@@ -71,6 +71,14 @@ href: [videos/24-year-old.mp4]
 end:true
 br: true
 }
+
+a{
+inner: [<font color="orange">⚡B O O M ! ⚡</font>]
+href: [videos/专业配音员.mp4]
+end: true
+br:true
+}
+
 a{
 inner: [Play 今天我要吃小孩火锅.mp3]
 href: flf.html
