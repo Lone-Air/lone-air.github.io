@@ -80,6 +80,12 @@ href: [videos/24-year-old.mp4]
 end:true
 br: true
 }
+a{
+inner: [LMFS PSML Repositories]
+href: psmllnk.html
+end:true
+br: true
+}
 br{/}
 br{/}
 font{
@@ -141,8 +147,7 @@ script(javascript){
 }
 
 command(new page sb)
-
-doc{html}
+command(html 5)
 head{word-wrap:true}
 command(title XZN)
 /head{}
@@ -198,7 +203,7 @@ text-align: center;
 /head();
 body();
 
-center{}
+/>center{}
 
 div{
 class: title
@@ -240,7 +245,9 @@ id: ATT
 }
 /b{}
 
-/center{}
+/div
+
+/>/center{}
 
 script(javascript){
     [
@@ -345,4 +352,28 @@ script(javascript){
     ]
 }
 /body{}
+
+command(new page psmllnk);
+head{
+    word-wrap: true
+};
+command(title LMFS-PSML Repositories);
+command(encoding utf8);
+/head{}
+body{}
+button{
+onclick: [window.open("https://github.com/lone-air/psml")]
+inner: [Github Repository (Must be the latest)]
+end:true
+br:true
+word-wrap:true
+}
+button{
+onclick: [window.open("https://gitee.com/lmfs/psml")]
+inner: [Gitee Repository (Not necessarily up to date)]
+end: true
+br: true
+word-wrap:true
+}
+/body
 
