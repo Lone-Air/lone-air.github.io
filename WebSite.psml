@@ -171,7 +171,7 @@ onchange: [sth(this)]
 id: wis
 }
 button{
-inner: [<font color="purple">IS sth</font>]
+inner: [<font color="purple">is sth</font>]
 onclick: [issth(this)]
 end: true
 }
