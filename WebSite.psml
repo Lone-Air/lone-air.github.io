@@ -146,8 +146,6 @@ text-align: center;
 /head();
 body();
 
-/>center{}
-
 div{
 class: title
 }
@@ -188,9 +186,7 @@ id: ATT
 }
 /b{}
 
-/div
-
-/>/center{}
+/div{}
 
 script(javascript){
     [
@@ -198,7 +194,6 @@ script(javascript){
         let supersth=false;
         function sth(elem){
             var val=elem.value
-            //val=val.split("<").join("&lt;").split(">").join("&gt;").split(" ").split("&nbsp;")
             if(val=="mystery"){
                 elem.disabled=true
                 whoissth="XZN"
