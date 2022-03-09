@@ -29,26 +29,17 @@ inner: [Welcome to LMFS Pages]
            color: #1f93ff
            ]
 }
-button{
-onclick: [Internationale()]
-             inner: [Play Internationale(Accompaniment)]
-             end:true
-             id: Play
-             br: true
-}
 
-
-button{
-onclick: [InternationaleCN()]
-             inner: [Play Internationale(Chinese version)]
-             end:true
-             id: Play1
-             br: true
+a{
+href: Internationale.html
+inner: [Play Internationale]
+end: true
+br: true
 }
 
 a{
 href: [/sb.html]
-            inner: [Play XZN.mp4(goto sb.html)]
+            inner: [Play XZN.mp4]
             end: true
             br: true
 }
@@ -97,55 +88,7 @@ inner: [Powered by github.io --- Website by Mr. LM28 production]
 }
 /div{}
 
-audio{
-source: audio/国际歌.mp3
-            loop: loop
-            end: true
-            id: InternationaleCN
-}
-audio{
-source: audio/Internationale.mp3
-            loop: loop
-            end: true
-            id: Internationale
-}
 /body{}
-script(javascript){
-    [
-        function Internationale(){
-            var IC=document.getElementById("InternationaleCN");
-            var I=document.getElementById("Internationale");
-            var PL=document.getElementById("Play");
-            var PL1=document.getElementById("Play1")
-            var PMP=prompt("If this song IS NOT welcome -in your country-, please do not play it. (type 'yes' and submit to play)", "no")
-                if(PMP=="yes"){
-                    I.play()
-                    if(!IC.paused){
-                        IC.pause()
-                    }
-                    PL.style.display="none"
-                    PL1.style.display="inline"
-                }
-        }
-
-        function InternationaleCN(){
-            var IC=document.getElementById("InternationaleCN");
-            var I=document.getElementById("Internationale");
-            var PL=document.getElementById("Play");
-            var PL1=document.getElementById("Play1")
-            var PMP=prompt("If this song IS NOT welcome -in your country-, please do not play it. (type 'yes' and submit to play)", "no")
-                if(PMP=="yes"){
-                    IC.play()
-                    if(!I.paused){
-                        I.pause()
-                    }
-                    PL1.style.display="none"
-                    PL.style.display="inline"
-                }
-        }
-    ]
-}
-
 command(new page sb)
 command(html 5)
 head{word-wrap:true}
@@ -376,5 +319,75 @@ end: true
 br: true
 word-wrap:true
 }
-/body
+/body{}
 
+command(new page Internationale);
+command(html 5);
+head{
+    word-wrap: true
+}
+command(title Internationale Play);
+/head{}
+body{}
+button{
+onclick: [Internationale()]
+             inner: [Play Internationale(Accompaniment)]
+             end:true
+             id: Play
+             br: true
+}
+button{
+onclick: [InternationaleCN()]
+             inner: [Play Internationale(Chinese version)]
+             end:true
+             id: Play1
+             br: true
+}
+audio{
+source: audio/国际歌.mp3
+            loop: loop
+            end: true
+            id: InternationaleCN
+}
+audio{
+source: audio/Internationale.mp3
+            loop: loop
+            end: true
+            id: Internationale
+}
+/body{}
+script(javascript){
+    [
+        function Internationale(){
+            var IC=document.getElementById("InternationaleCN");
+            var I=document.getElementById("Internationale");
+            var PL=document.getElementById("Play");
+            var PL1=document.getElementById("Play1")
+            var PMP=prompt("If this song IS NOT welcome -in your country-, please do not play it. (type 'yes' and submit to play)", "no")
+                if(PMP=="yes"){
+                    I.play()
+                    if(!IC.paused){
+                        IC.pause()
+                    }
+                    PL.style.display="none"
+                    PL1.style.display="inline"
+                }
+        }
+
+        function InternationaleCN(){
+            var IC=document.getElementById("InternationaleCN");
+            var I=document.getElementById("Internationale");
+            var PL=document.getElementById("Play");
+            var PL1=document.getElementById("Play1")
+            var PMP=prompt("If this song IS NOT welcome -in your country-, please do not play it. (type 'yes' and submit to play)", "no")
+                if(PMP=="yes"){
+                    IC.play()
+                    if(!I.paused){
+                        I.pause()
+                    }
+                    PL1.style.display="none"
+                    PL.style.display="inline"
+                }
+        }
+    ]
+}

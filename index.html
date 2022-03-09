@@ -20,11 +20,9 @@ text-align: center;
 <h3 style='
 color: #1f93ff
 '>Welcome to LMFS Pages</h3>
-<button onclick='Internationale()' id='Play'>Play Internationale(Accompaniment)</button>
+<a href='Internationale.html'>Play Internationale</a>
 <br/>
-<button onclick='InternationaleCN()' id='Play1'>Play Internationale(Chinese version)</button>
-<br/>
-<a href='/sb.html'>Play XZN.mp4(goto sb.html)</a>
+<a href='/sb.html'>Play XZN.mp4</a>
 <br/>
 <a href='/df.html'>Download web site internal files</a>
 <br/>
@@ -41,44 +39,5 @@ color: #1f93ff
 <font color='gray' style='font-size:6pt'>Powered by github.io --- Website by Mr. LM28 production</font>
 <br/>
 </div>
-<audio loop='loop' id='InternationaleCN'><source src='audio/国际歌.mp3' type='audio/mpeg'>
-</audio>
-<audio loop='loop' id='Internationale'><source src='audio/Internationale.mp3' type='audio/mpeg'>
-</audio>
 </body>
-<script language='javascript'>
-
-
-function Internationale(){
-var IC=document.getElementById("InternationaleCN");
-var I=document.getElementById("Internationale");
-var PL=document.getElementById("Play");
-var PL1=document.getElementById("Play1")
-var PMP=prompt("If this song IS NOT welcome -in your country-, please do not play it. (type 'yes' and submit to play)", "no")
-if(PMP=="yes"){
-I.play()
-if(!IC.paused){
-IC.pause()
-}
-PL.style.display="none"
-PL1.style.display="inline"
-}
-}
-function InternationaleCN(){
-var IC=document.getElementById("InternationaleCN");
-var I=document.getElementById("Internationale");
-var PL=document.getElementById("Play");
-var PL1=document.getElementById("Play1")
-var PMP=prompt("If this song IS NOT welcome -in your country-, please do not play it. (type 'yes' and submit to play)", "no")
-if(PMP=="yes"){
-IC.play()
-if(!I.paused){
-I.pause()
-}
-PL1.style.display="none"
-PL.style.display="inline"
-}
-}
-
-
-</script></html>
+</html>
