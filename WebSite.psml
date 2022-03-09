@@ -421,6 +421,7 @@ onclick="flf()"
 end:true
 word-wrap:true
 id: pl
+br: true
 }
 audio{
 src: audio/flf.mp3
