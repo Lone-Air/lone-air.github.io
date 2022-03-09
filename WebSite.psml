@@ -503,7 +503,7 @@ onclick: [zypyy()]
 }
 
 video{
-src: videos/zypyy.flv
+src: [videos/zypyy.flv]
 loop: loop
 id: zypyy
 end: true
@@ -513,7 +513,7 @@ style: [display: none]
 
 script(javascript){
     [
-    function SB(){
+    function zypyy(){
             var pyy=document.getElementById("zypyy")
             var pl2=document.getElementById("Play2")
             pyy.style.display="inline"
