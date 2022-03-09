@@ -72,9 +72,15 @@ end:true
 br: true
 }
 a{
-inner: [今天我要吃小孩火锅.mp3]
+inner: [Play 今天我要吃小孩火锅.mp3]
 href: flf.html
 end: true
+br: true
+}
+a{
+inner: [Play ENEMY]
+href: [p-enemy.html]
+end:true
 br: true
 }
 a{
@@ -430,6 +436,7 @@ id: flf
 end: true
 word-wrap:true
 }
+/body{}
 script(javascript){
     [
         function flf(){
@@ -440,4 +447,37 @@ script(javascript){
         }
     ]
 }
+command(new page p-enemy);
+command(html 5);
+head{
+    word-wrap:true
+}
+command(title ENEMY);
+/head{}
+body{}
+button{
+inner: [Play ENEMY]
+onclick: [ENEMY()]
+end:true
+word-wrap:true
+id: pl
+br: true
+}
+audio{
+src: audio/ENEMY.mp3
+loop: loop
+id: ENE
+end: true
+word-wrap:true
+}
 /body{}
+script(javascript){
+    [
+        function ENEMY(){
+            var ENE=document.getElementById("ENEMY")
+            ENE.play()
+            var pl=document.getElementById("pl")
+            pl.style.display="none"
+        }
+    ]
+}
