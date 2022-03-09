@@ -1,8 +1,8 @@
-#html<5>
+command(html 5)
 head{
     word-wrap:true;
 }
-#title<LMFS Pages>
+command(title LMFS Pages)
 meta{
 charset: utf8;
          /
@@ -144,7 +144,7 @@ command(new page sb)
 
 doc{html}
 head{word-wrap:true}
-#title<XZN>
+command(title XZN)
 /head{}
 body()
 button{
@@ -180,11 +180,11 @@ script(javascript){
 
 command(new page whoissth);
 
-#html<5>
+command(html 5)
 head{
     word-wrap: true
 }
-#title<Who IS STH?>
+command(title Who IS Sth)
 style{
     [
     .title{
@@ -302,11 +302,11 @@ script(javascript){
 
 command(new page df);
 
-#html<5>
+command(html 5)
 head{
     word-wrap: true
 }
-#title<Download web site internal files>
+command(title Download web site internal files)
 /head{}
 body{}
 input{
