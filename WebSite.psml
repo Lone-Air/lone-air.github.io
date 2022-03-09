@@ -354,6 +354,7 @@ script(javascript){
 /body{}
 
 command(new page psmllnk);
+command(html 5);
 head{
     word-wrap: true
 };
