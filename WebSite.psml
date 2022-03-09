@@ -417,7 +417,7 @@ command(title 今天我要吃小孩火锅);
 body{}
 button{
 inner: [Play 今天我要吃小孩火锅]
-onclick="flf()"
+onclick: [flf()]
 end:true
 word-wrap:true
 id: pl
