@@ -25,7 +25,9 @@ text-align: center;
 </b>
 <input placeholder='The name of the person you think IS sth' onchange='sth(this)' id='wis'>
 <button onclick='issth(this)'><font color="purple">IS STH</font></button>
+<button onclick='lock()' id='lock'><font color="red">lock</font></button>
 <br/>
+
 <b>
 <p style='color: red' id='ATT'>ATTENTION: For entertainment only</p>
 
@@ -49,6 +51,12 @@ else{
 whoissth=val
 }
 refresh_sth()
+}
+function lock(){
+var lock=document.getElementById("lock")
+var sth=document.getElementById("wis")
+sth.disabled=true
+lock.style.display="none"
 }
 function refresh_sth(){
 document.getElementById("wis").value=whoissth

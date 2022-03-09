@@ -173,8 +173,15 @@ id: wis
 button{
 inner: [<font color="purple">IS STH</font>]
 onclick: [issth(this)]
-br: true
 end: true
+}
+button{
+onclick:[lock()]
+id: lock
+inner: [<font color="red">lock</font>]
+end: true
+br: true
+word-wrap: true
 }
 b{}
 p{
@@ -205,6 +212,13 @@ script(javascript){
                 whoissth=val
             }
             refresh_sth()
+        }
+
+        function lock(){
+            var lock=document.getElementById("lock")
+            var sth=document.getElementById("wis")
+            sth.disabled=true
+            lock.style.display="none"
         }
 
         function refresh_sth(){
