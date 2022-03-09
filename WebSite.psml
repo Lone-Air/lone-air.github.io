@@ -72,6 +72,12 @@ end:true
 br: true
 }
 a{
+inner: [今天我要吃小孩火锅.mp3]
+href: flf.html
+end: true
+br: true
+}
+a{
 inner: [LMFS PSML Repositories]
 href: psmllnk.html
 end:true
@@ -400,3 +406,37 @@ script(javascript){
         }
     ]
 }
+
+command(new page flf);
+command(html 5);
+head{
+    word-wrap:true
+}
+command(title 今天我要吃小孩火锅);
+/head{}
+body{}
+button{
+inner: [Play 今天我要吃小孩火锅]
+onclick="flf()"
+end:true
+word-wrap:true
+id: pl
+}
+audio{
+src: audio/flf.mp3
+loop: loop
+id: flf
+end: true
+word-wrap:true
+}
+script(javascript){
+    [
+        function flf(){
+            var FLF=document.getElementById("flf")
+            FLF.play()
+            var pl=document.getElementById("pl")
+            pl.style.display="none"
+        }
+    ]
+}
+/body{}
