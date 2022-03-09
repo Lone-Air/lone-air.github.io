@@ -2,7 +2,7 @@
 <html>
 <head>
 
-<title>Who IS Sth</title><style type='text/css'>
+<title>Who is sth</title><style type='text/css'>
 
 
 .title{
@@ -17,14 +17,14 @@ text-align: center;
 <body>
 <div class='title'>
 <b>
-<p style='color: orange'>Welcome to Who IS STH?</p>
+<p style='color: orange'>Welcome to Who is sth?</p>
 
-<font id='whoissth' color='green'>sth IS &lt;nobody&gt;</font>
+<font id='whoissth' color='green'>sth is &lt;nobody&gt;</font>
 <br/>
 
 </b>
-<input placeholder='The name of the person you think IS sth' onchange='sth(this)' id='wis'>
-<button onclick='issth(this)'><font color="purple">IS STH</font></button>
+<input placeholder='The name of the person you think is sth' onchange='sth(this)' id='wis'>
+<button onclick='issth(this)'><font color="purple">IS sth</font></button>
 <button onclick='lock()' id='lock'><font color="red">lock</font></button>
 <br/>
 
@@ -62,20 +62,20 @@ function refresh_sth(){
 document.getElementById("wis").value=whoissth
 var INFO=document.getElementById("whoissth")
 if(whoissth==""){
-INFO.innerHTML="sth IS &lt;nobody&gt;"
+INFO.innerHTML="sth is &lt;nobody&gt;"
 }
 else{
-INFO.innerHTML="sth IS "+whoissth
+INFO.innerHTML="sth is "+whoissth
 }
 }
 function issth(elem){
 var val=elem.value;
-var think=prompt("do you think "+whoissth+" IS sth? (yes/no)", "yes");
+var think=prompt("do you think "+whoissth+" is sth? (yes/no)", "yes");
 if (think=="yes"){
 alert("yes, you're right")
 }
 else{
-alert("Oh no, I think "+whoissth+" IS sth")
+alert("Oh no, I think "+whoissth+" is sth")
 }
 }
 window.onbeforeunload=function(){

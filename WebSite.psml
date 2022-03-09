@@ -52,7 +52,7 @@ href: [/df.html]
 }
 
 a{
-inner: [Mini GAME: Who IS STH]
+inner: [Mini GAME: Who is sth]
 end: true
 br: true
 href: [/whoissth.html]
@@ -100,7 +100,7 @@ onclick: [SB()]
             inner: [Play XZN.mp4]
             id: Play2
             end: true
-}!~*
+}
 
 video{
 src: videos/sb.mp4
@@ -132,7 +132,7 @@ command(html 5)
 head{
     word-wrap: true
 }
-command(title Who IS Sth)
+command(title Who is sth)
 style{
     [
     .title{
@@ -151,14 +151,14 @@ class: title
 }
 b{}
 p{
-inner: [Welcome to Who IS STH?];
+inner: [Welcome to Who is sth?];
 end:true;
 word-wrap:true;
 style: [color: orange]
 }
 font{
 id: whoissth
-inner: [sth IS &lt;nobody&gt;]
+inner: [sth is &lt;nobody&gt;]
 color: green
 end: true
 br: true
@@ -166,12 +166,12 @@ word-wrap: true
 }
 /b{}
 input{
-placeholder: [The name of the person you think IS sth]
+placeholder: [The name of the person you think is sth]
 onchange: [sth(this)]
 id: wis
 }
 button{
-inner: [<font color="purple">IS STH</font>]
+inner: [<font color="purple">IS sth</font>]
 onclick: [issth(this)]
 end: true
 }
@@ -225,21 +225,21 @@ script(javascript){
             document.getElementById("wis").value=whoissth
             var INFO=document.getElementById("whoissth")
             if(whoissth==""){
-                INFO.innerHTML="sth IS &lt;nobody&gt;"
+                INFO.innerHTML="sth is &lt;nobody&gt;"
             }
             else{
-                INFO.innerHTML="sth IS "+whoissth
+                INFO.innerHTML="sth is "+whoissth
             }
         }
 
         function issth(elem){
             var val=elem.value;
-            var think=prompt("do you think "+whoissth+" IS sth? (yes/no)", "yes");
+            var think=prompt("do you think "+whoissth+" is sth? (yes/no)", "yes");
             if (think=="yes"){
                 alert("yes, you're right")
             }
             else{
-                alert("Oh no, I think "+whoissth+" IS sth")
+                alert("Oh no, I think "+whoissth+" is sth")
             }
         }
 
@@ -372,7 +372,7 @@ script(javascript){
             var I=document.getElementById("Internationale");
             var PL=document.getElementById("Play");
             var PL1=document.getElementById("Play1")
-            var PMP=prompt("If this song IS NOT welcome -in your country-, please do not play it. (type 'yes' and submit to play)", "no")
+            var PMP=prompt("If this song is NOT welcome -in your country-, please do not play it. (type 'yes' and submit to play)", "no")
                 if(PMP=="yes"){
                     I.play()
                     if(!IC.paused){
@@ -388,7 +388,7 @@ script(javascript){
             var I=document.getElementById("Internationale");
             var PL=document.getElementById("Play");
             var PL1=document.getElementById("Play1")
-            var PMP=prompt("If this song IS NOT welcome -in your country-, please do not play it. (type 'yes' and submit to play)", "no")
+            var PMP=prompt("If this song is NOT welcome -in your country-, please do not play it. (type 'yes' and submit to play)", "no")
                 if(PMP=="yes"){
                     IC.play()
                     if(!I.paused){
