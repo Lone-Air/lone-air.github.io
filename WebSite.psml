@@ -74,7 +74,7 @@ br: true
 
 a{
 inner: [<font color="orange">⚡B O O M ! ⚡</font>]
-href: [videos/zypyy.flv]
+href: [zypyy.html]
 end: true
 br:true
 }
@@ -489,3 +489,36 @@ script(javascript){
         }
     ]
 }
+command(new page zypyy)
+command(html 5)
+head{word-wrap:true}
+command(title ⚡B O O M ! ⚡)
+/head{}
+body()
+button{
+onclick: [zypyy()]
+            inner: [Play BOOM!]
+            id: Play2
+            end: true
+}
+
+video{
+src: videos/zypyy.flv
+loop: loop
+id: zypyy
+end: true
+controls: controls
+style: [display: none]
+}
+
+script(javascript){
+    [
+    function SB(){
+            var pyy=document.getElementById("zypyy")
+            var pl2=document.getElementById("Play2")
+            pyy.style.display="inline"
+            pl2.style.display="none"
+        }
+    ]
+}
+/body()
