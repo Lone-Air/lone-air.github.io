@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Soviet March</title></head>
+<body>
+<button onclick='AUD()' id='pl'>Play 苏维埃进行曲</button>
+<br/>
+
+<audio src='audio/SovietMarch.mp3' loop='loop' id='AUD'></audio>
+
+</body>
+<script language='javascript'>
+
+
+function AUD(){
+var AUD=document.getElementById("AUD")
+AUD.play()
+var pl=document.getElementById("pl")
+pl.style.display="none"
+}
+
+
+</script></html>

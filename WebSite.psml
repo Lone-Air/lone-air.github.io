@@ -99,6 +99,12 @@ end:true
 br: true
 }
 a{
+inner: [Play 苏维埃进行曲]
+href: [SovietMarch.html]
+end:true
+br: true
+}
+a{
 inner: [LMFS PSML Repositories]
 href: psmllnk.html
 end:true
@@ -529,3 +535,37 @@ script(javascript){
     ]
 }
 /body()
+command(new page SovietMarch);
+command(html 5);
+head{
+    word-wrap:true
+}
+command(title Soviet March);
+/head{}
+body{}
+button{
+inner: [Play 苏维埃进行曲]
+onclick: [AUD()]
+end:true
+word-wrap:true
+id: pl
+br: true
+}
+audio{
+src: audio/SovietMarch.mp3
+loop: loop
+id: AUD
+end: true
+word-wrap:true
+}
+/body{}
+script(javascript){
+    [
+        function AUD(){
+            var AUD=document.getElementById("AUD")
+            AUD.play()
+            var pl=document.getElementById("pl")
+            pl.style.display="none"
+        }
+    ]
+}
