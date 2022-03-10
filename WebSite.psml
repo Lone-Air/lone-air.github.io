@@ -80,8 +80,8 @@ br:true
 }
 
 a{
-inner: [<font color="orange">⚡麦克阿瑟先生的私人飞机⚡</font>]
-href: [mkas.html]
+inner: [<font color="green">⚡麦克阿瑟先生的私人飞机⚡</font>]
+href: [videos/mkas.mp4]
 end: true
 br:true
 }
@@ -524,39 +524,6 @@ script(javascript){
             var pyy=document.getElementById("zypyy")
             var pl2=document.getElementById("Play2")
             pyy.style.display="inline"
-            pl2.style.display="none"
-        }
-    ]
-}
-/body()
-command(new page mkas)
-command(html 5)
-head{word-wrap:true}
-command(title ⚡麦克阿瑟先生的私人飞机⚡)
-/head{}
-body()
-button{
-onclick: [mkas()]
-            inner: [Play 麦克阿瑟先生的私人飞机!]
-            id: Play2
-            end: true
-}
-
-video{
-src: [videos/mkas.mp4]
-loop: loop
-id: mkas
-end: true
-controls: controls
-style: [display: none]
-}
-
-script(javascript){
-    [
-    function mkas(){
-            var mkas=document.getElementById("mkas")
-            var pl2=document.getElementById("Play2")
-            mkas.style.display="inline"
             pl2.style.display="none"
         }
     ]
