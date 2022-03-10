@@ -361,6 +361,13 @@ end: true
 br: true
 word-wrap:true
 }
+button{
+onclick: [window.open("https://www.python.org/downloads/release/python-372")]
+inner: [Get Python 3.7.2]
+br: true
+end: true
+word-wrap: true
+}
 /body{}
 
 command(new page Internationale);
