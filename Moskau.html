@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Moskau</title></head>
+<body>
+<button onclick='AUD()' id='pl'>Play Moskau</button>
+<br/>
+
+<audio src='audio/moskau.mp3' loop='loop' id='AUD'></audio>
+
+</body>
+<script language='javascript'>
+
+
+function AUD(){
+var AUD=document.getElementById("AUD")
+AUD.play()
+var pl=document.getElementById("pl")
+pl.style.display="none"
+}
+
+
+</script></html>

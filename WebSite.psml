@@ -105,6 +105,12 @@ end:true
 br: true
 }
 a{
+inner: [Play Moskau]
+href: [Moskau.html]
+end:true
+br: true
+}
+a{
 inner: [LMFS PSML Repositories]
 href: psmllnk.html
 end:true
@@ -560,6 +566,40 @@ br: true
 }
 audio{
 src: audio/SovietMarch.mp3
+loop: loop
+id: AUD
+end: true
+word-wrap:true
+}
+/body{}
+script(javascript){
+    [
+        function AUD(){
+            var AUD=document.getElementById("AUD")
+            AUD.play()
+            var pl=document.getElementById("pl")
+            pl.style.display="none"
+        }
+    ]
+}
+command(new page Moskau);
+command(html 5);
+head{
+    word-wrap:true
+}
+command(title Moskau);
+/head{}
+body{}
+button{
+inner: [Play Moskau]
+onclick: [AUD()]
+end:true
+word-wrap:true
+id: pl
+br: true
+}
+audio{
+src: audio/moskau.mp3
 loop: loop
 id: AUD
 end: true
