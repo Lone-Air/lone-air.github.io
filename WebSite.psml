@@ -38,6 +38,13 @@ br: true
 }
 
 a{
+href: Интернационал.html
+inner: [Play Internationale(Russian version)]
+end: true
+br: true
+}
+
+a{
 href: [/sb.html]
             inner: [Play XZN.mp4]
             end: true
@@ -600,6 +607,40 @@ br: true
 }
 audio{
 src: audio/moskau.mp3
+loop: loop
+id: AUD
+end: true
+word-wrap:true
+}
+/body{}
+script(javascript){
+    [
+        function AUD(){
+            var AUD=document.getElementById("AUD")
+            AUD.play()
+            var pl=document.getElementById("pl")
+            pl.style.display="none"
+        }
+    ]
+}
+command(new page Интернационал);
+command(html 5);
+head{
+    word-wrap:true
+}
+command(title Интернационал);
+/head{}
+body{}
+button{
+inner: [Play Интернационал]
+onclick: [AUD()]
+end:true
+word-wrap:true
+id: pl
+br: true
+}
+audio{
+src: audio/Интернационал.mp3
 loop: loop
 id: AUD
 end: true
