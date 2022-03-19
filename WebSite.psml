@@ -657,3 +657,24 @@ script(javascript){
         }
     ]
 }
+command(new page 404);
+command(html 5);
+head{
+word-wrap:true;
+}
+command(title You fuck it)
+/head{}
+div{
+style:[
+width: 300px;
+margin: 10px auto;
+padding: 10px 0px;
+text-align: center;
+]
+}
+h1{
+    inner: [404 NOT FOUND. You Fuck it!]
+    end:true;
+    word-wrap:true;
+}
+/div{}
