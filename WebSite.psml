@@ -678,3 +678,16 @@ h1{
     word-wrap:true;
 }
 /div{}
+command(new page nmsl);
+command(html 5);
+head{
+    word-wrap:true
+}
+command(title NMSL);
+/head{}
+body{
+leftmargin:0px
+topmargin: 0px
+background: [pictures/Mr_Sun.png]
+}
+/body{}
