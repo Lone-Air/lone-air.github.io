@@ -704,6 +704,11 @@ topmargin: 0px
 background: [pictures/Mr_Sun.png]
 }
 /body{}
+command(new page Internationale_CN);
+command(html 5);
+head{
+word-wrap:true
+}
 command(title Internationale_CN);
 /head{}
 body{}
