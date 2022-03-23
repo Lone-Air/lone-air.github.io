@@ -716,7 +716,7 @@ command(title Internationale_CN);
 /head{}
 body{}
 button{
-inner: [Play Internationale("Chinese version - Accompaniment")]
+inner: [Play Internationale(Chinese version - Accompaniment)]
 onclick: [AUD()]
 end:true
 word-wrap:true
