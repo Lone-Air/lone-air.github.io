@@ -44,7 +44,7 @@ end: true
 br: true
 }
 a{
-href: ["Internationale_CN.html"]
+href: [Internationale_CN.html]
 inner: [Play Internationale(Chinese version - Accompaniment)]
 end: true
 br: true
@@ -668,7 +668,7 @@ command(html 5);
 head{
 word-wrap:true;
 }
-command(title You fuck it)
+command(title 404 Not Found)
 /head{}
 div{
 style:[
@@ -679,9 +679,16 @@ text-align: center;
 ]
 }
 h1{
-    inner: [404 NOT FOUND. You Fuck it!]
+    inner: [404 NOT FOUND. Please check the url]
     end:true;
     word-wrap:true;
+    br:true
+}
+a{
+href:/
+inner:[Go to the main page]
+end:true
+word-wrap:true;
 }
 /div{}
 command(new page nmsl);
