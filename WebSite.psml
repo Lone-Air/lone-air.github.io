@@ -43,6 +43,12 @@ inner: [Play Internationale(Russian version)]
 end: true
 br: true
 }
+a{
+href: ["Internationale_CN.html"]
+inner: [Play Internationale(Chinese version - Accompaniment)]
+end: true
+br: true
+}
 
 a{
 href: [/sb.html]
@@ -691,3 +697,32 @@ topmargin: 0px
 background: [pictures/Mr_Sun.png]
 }
 /body{}
+command(title Internationale_CN);
+/head{}
+body{}
+button{
+inner: [Play Internationale("Chinese version - Accompaniment")]
+onclick: [AUD()]
+end:true
+word-wrap:true
+id: pl
+br: true
+}
+audio{
+src: audio/国际歌_伴奏.mp3
+loop: loop
+id: AUD
+end: true
+word-wrap:true
+}
+/body{}
+script(javascript){
+    [
+        function AUD(){
+            var AUD=document.getElementById("AUD")
+            AUD.play()
+            var pl=document.getElementById("pl")
+            pl.style.display="none"
+        }
+    ]
+}
