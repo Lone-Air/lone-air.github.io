@@ -439,6 +439,7 @@ script(javascript){
                     }
                     PL.style.display="none"
                     PL1.style.display="inline"
+                    document.body.style.backgroundColor="#FF0000"
                 }
         }
 
@@ -455,6 +456,7 @@ script(javascript){
                     }
                     PL1.style.display="none"
                     PL.style.display="inline"
+                    document.body.style.backgroundColor="#FF0000"
                 }
         }
     ]
@@ -660,6 +662,7 @@ script(javascript){
             AUD.play()
             var pl=document.getElementById("pl")
             pl.style.display="none"
+            document.body.style.backgroundColor="#FF0000"
         }
     ]
 }
@@ -735,6 +738,7 @@ script(javascript){
             AUD.play()
             var pl=document.getElementById("pl")
             pl.style.display="none"
+            document.body.style.backgroundColor="#FF0000"
         }
     ]
 }
