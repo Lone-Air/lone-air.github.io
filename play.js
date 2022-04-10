@@ -1,6 +1,7 @@
 function playMus(arr){
     var repeat=0;
     var mus=new Audio();
+    var oldarr=arr.slice();
     mus.preload=false;
     mus.controls=false;
     mus.hidden=true;
@@ -11,7 +12,7 @@ function playMus(arr){
     mus.play()
     mus.loop=false;
     function playEndedHandler(){
-        if(repeat>=arr.length){playMus(arr);}
+        if(repeat>=arr.length){playMus(oldarr);}
         src=arr.pop();
         mus.src=src;
         arr.unshift(src);
