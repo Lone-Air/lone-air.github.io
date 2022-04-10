@@ -11,7 +11,7 @@ function playMus(arr){
     mus.loop=false;
     function playEndedHandler(){
         if(repeat>=arr.length){return false;}
-        src>arr.pop();
+        src=arr.pop();
         mus.src=src;
         arr.unshift(src);
         mus.play();
