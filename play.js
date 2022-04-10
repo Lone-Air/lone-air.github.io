@@ -16,6 +16,7 @@ function playMus(arr){
         arr.unshift(src);
         mus.play();
         repeat++;
+    }
 }
 
 function playLoop(arr){
