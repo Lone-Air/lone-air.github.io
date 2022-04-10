@@ -11,16 +11,11 @@ function playMus(arr){
     mus.play()
     mus.loop=false;
     function playEndedHandler(){
-        if(repeat>=arr.length){return false;}
+        if(repeat>=arr.length){playMus(arr);}
         src=arr.pop();
         mus.src=src;
         arr.unshift(src);
         mus.play();
         repeat++;
     }
-}
-
-function playLoop(arr){
-    playMus(arr);
-    playLoop(arr);
 }
