@@ -6,6 +6,7 @@ function playMus(arr){
     mus.hidden=true;
     var src=arr.pop();
     mus.src=src;
+    arr.unshift(src);
     mus.addEventListener("ended", playEndedHandler, false);
     mus.play()
     mus.loop=false;
