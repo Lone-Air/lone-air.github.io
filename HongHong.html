@@ -9,6 +9,7 @@
     <div style="width:2xxpx;height:2yypx;background-color:#00c8ff;color:black;text-align:center;border-radius:10px;-moz-border-radius: 10px;-webkit-border-radius:10px;-o-border-radius:10px">
         <div style="background-color: #ccff00; color: #2c8df5">
             HongHong 🖕🏻🖕🏻🖕🏻哄哄
+            <button onclick="playGo()">Play sounds(播放音频)</button>
         </div>
         <a href="/pictures/honghong.jpg"><img src="/pictures/honghong.jpg" alt="honghong" width=200px height=200px></a>
     </div>
@@ -29,8 +30,10 @@
     </div>
 </body>
 <script>
-var plList=new Array("/audio/老八.mp3", "/audio/114514.mp3", "/audio/sb.mp3");
-playLoop(plList);
+function playGo(){
+    var plList=new Array("/audio/老八.mp3", "/audio/114514.mp3", "/audio/sb.mp3");
+    playMus(plList);
+}
 </script>
 </html>
 
