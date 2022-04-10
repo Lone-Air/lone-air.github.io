@@ -129,6 +129,12 @@ href: psmllnk.html
 end:true
 br: true
 }
+a{
+inner:[🖕🏻 HongHong 🖕🏻]
+href: honghong.html
+end:true
+br:true
+}
 br{/}
 br{/}
 font{
