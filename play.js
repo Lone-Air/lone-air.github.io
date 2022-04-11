@@ -11,6 +11,7 @@ function playMus(arr){
     arr.unshift(src);
     mus.addEventListener("ended", playEndedHandler, false);
     var success=mus.play();
+    alert(success)
     if(success){click=true;}
     else{return 0;}
     mus.loop=false;
