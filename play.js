@@ -10,7 +10,8 @@ function playMus(arr){
     mus.src=src;
     arr.unshift(src);
     mus.addEventListener("ended", playEndedHandler, false);
-    mus.play()&&click=true;
+    mus.play();
+    click=true;
     mus.loop=false;
     function playEndedHandler(){
         if(repeat>=arr.length){repeat=0;playMus(oldarr);repeat=0;return 0;}
