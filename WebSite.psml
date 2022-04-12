@@ -100,6 +100,13 @@ br:true
 }
 
 a{
+inner: [<font color="orange">独 立 宣 言</font>]
+href: [独立宣言.html]
+end: true
+br:true
+}
+
+a{
 inner: [Play 今天我要吃小孩火锅.mp3]
 href: flf.html
 end: true
@@ -751,3 +758,38 @@ script(javascript){
         }
     ]
 }
+command(new page 独立宣言)
+command(html 5)
+head{word-wrap:true}
+command(title 独 立 宣 言)
+/head{}
+body()
+button{
+onclick: [zypyy()]
+            inner: [Play 独立宣言]
+            id: Play2
+            end: true
+}
+
+video{
+src: [videos/独立宣言.mp4]
+loop: loop
+id: zypyy
+end: true
+controls: controls
+width:100%
+height:100%
+style: [display: none]
+}
+
+script(javascript){
+    [
+    function zypyy(){
+            var pyy=document.getElementById("zypyy")
+            var pl2=document.getElementById("Play2")
+            pyy.style.display="inline"
+            pl2.style.display="none"
+        }
+    ]
+}
+/body()
