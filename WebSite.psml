@@ -771,23 +771,21 @@ onclick: [zypyy()]
             end: true
 }
 
-video{
-src: [videos/独立宣言.mp4]
+audio{
+source: [audio/独立宣言.mp3]
 loop: loop
-id: zypyy
+id: play
 end: true
 controls: controls
-width:100%
-height:100%
 style: [display: none]
 }
 
 script(javascript){
     [
     function zypyy(){
-            var pyy=document.getElementById("zypyy")
+            var pyy=document.getElementById("play")
             var pl2=document.getElementById("Play2")
-            pyy.style.display="inline"
+            pyy.play()
             pl2.style.display="none"
         }
     ]

@@ -5,14 +5,15 @@
 <title>独 立 宣 言</title></head>
 <body>
 <button onclick='zypyy()' id='Play2'>Play 独立宣言</button>
-<video src='videos/独立宣言.mp4' loop='loop' id='zypyy' controls='controls' width='100%' height='100%' style='display: none'></video>
+<audio loop='loop' id='play' controls='controls' style='display: none'><source src='audio/独立宣言.mp3' type='audio/mpeg'>
+</audio>
 <script language='javascript'>
 
 
 function zypyy(){
-var pyy=document.getElementById("zypyy")
+var pyy=document.getElementById("play")
 var pl2=document.getElementById("Play2")
-pyy.style.display="inline"
+pyy.play()
 pl2.style.display="none"
 }
 
