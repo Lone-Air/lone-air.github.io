@@ -129,13 +129,14 @@ href: psmllnk.html
 end:true
 br: true
 }
+div{id:[remove];word-wrap:true}
 a{
 inner:[🖕🏻 HongHong 🖕🏻]
 href: HongHong.html
 end:true
 br:true
 }
-br{/}
+/div{word-wrap:true}
 br{/}
 font{
 color: gray
@@ -147,6 +148,14 @@ inner: [Powered by github.io --- Website by laman28 production]
 /div{}
 
 /body{}
+script{
+[
+    var rm=Math.floor(Math.random()*100);
+    if(rm<=30){
+        document.getElementById("remove").innerHTML="";
+    }
+]
+}
 command(new page sb)
 command(html 5)
 head{word-wrap:true}
