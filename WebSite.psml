@@ -130,12 +130,6 @@ end:true
 br: true
 }
 div{id:[remove];word-wrap:true}
-a{
-inner:[🖕🏻 HongHong 🖕🏻]
-href: HongHong.html
-end:true
-br:true
-}
 /div{word-wrap:true}
 br{/}
 font{
@@ -152,7 +146,7 @@ script{
 [
     var rm=Math.floor(Math.random()*100);
     if(rm<=30){
-        document.getElementById("remove").innerHTML="";
+        document.getElementById("remove").innerHTML="<a href='HongHong.html'>🖕🏻 HongHong 🖕🏻</a>";
     }
 ]
 }
