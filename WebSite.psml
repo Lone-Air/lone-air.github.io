@@ -31,6 +31,13 @@ inner: [Welcome to LMFS Pages]
 }
 
 a{
+href: [blog.html]
+inner: [LMFS Blog]
+end:true
+br:true
+}
+
+a{
 href: Internationale.html
 inner: [Play Internationale]
 end: true
