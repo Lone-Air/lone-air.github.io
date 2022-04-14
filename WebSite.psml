@@ -31,7 +31,7 @@ inner: [Welcome to LMFS Pages]
 }
 
 a{
-href: [blog.html]
+href: [/blog]
 inner: [LMFS Blog]
 end:true
 br:true

@@ -18,14 +18,12 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: LMFS
-SEOTitle: LMFS Blog
+title: LMFS Blog
 email: Lone_air_Use@outlook.com
 description: This is LMFS Blog
-baseurl: "/blog"
-url: "https://lone-air.github.io" 
+baseurl: "/blog" # the subpath of your site, e.g. /blog
+url: "https://lone-air.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  Lone-Air
-keyword: LMFS, Blog
 
 # Build settings
 theme: minima
