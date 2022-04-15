@@ -32,7 +32,7 @@ inner: [Welcome to LMFS Pages]
 
 a{
 href: [/blog]
-inner: [LMFS Blog]
+inner: [LMFS Blog(broken)]
 end:true
 br:true
 }
