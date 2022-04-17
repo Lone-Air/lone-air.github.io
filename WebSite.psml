@@ -818,7 +818,7 @@ onclick: [zypyy()]
             end: true
 }
 
-audio{
+video{
 source: [videos/蹦极蹦到想回家的男人.mp4]
 loop: loop
 id: play
