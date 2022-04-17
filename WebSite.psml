@@ -114,6 +114,13 @@ br:true
 }
 
 a{
+inner: [<font color="orange">蹦极蹦到想回家的男人</font>]
+href: [独立宣言.html]
+end: true
+br:true
+}
+
+a{
 inner: [Play 今天我要吃小孩火锅.mp3]
 href: flf.html
 end: true
@@ -780,6 +787,39 @@ onclick: [zypyy()]
 
 audio{
 source: [audio/独立宣言.mp3]
+loop: loop
+id: play
+end: true
+controls: controls
+style: [display: none]
+}
+
+script(javascript){
+    [
+    function zypyy(){
+            var pyy=document.getElementById("play")
+            var pl2=document.getElementById("Play2")
+            pyy.play()
+            pl2.style.display="none"
+        }
+    ]
+}
+/body()
+command(new page 蹦极蹦到想回家的男人)
+command(html 5)
+head{word-wrap:true}
+command(title 蹦极蹦到想回家的男人)
+/head{}
+body()
+button{
+onclick: [zypyy()]
+            inner: [Play 蹦极蹦到想回家的男人]
+            id: Play2
+            end: true
+}
+
+audio{
+source: [videos/蹦极蹦到想回家的男人.mp4]
 loop: loop
 id: play
 end: true
