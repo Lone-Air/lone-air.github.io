@@ -834,6 +834,7 @@ script(javascript){
             var pl2=document.getElementById("Play2")
             pyy.play()
             pl2.style.display="none"
+            pyy.style.display="inline"
         }
     ]
 }
