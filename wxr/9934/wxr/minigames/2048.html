@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>2048小游戏</title>
+<link rel="stylesheet" type="text/css" href="../../css/header.css" />
+<link rel="stylesheet" type="text/css" href="../../css/2048.css" />
+<meta name="viewport" content="width=device-width,initial-scale=0.8,user-scalable=no"/>
+</head>
+<body>
+<div id="header">
+	<a href="../index.html">
+		<span style="color:#ff0000">9</span>
+		<span style="color:#0000ff">9</span>
+		<span style="color:#00ff00">3</span>
+		<span style="color:#ff00ff">4</span>
+		<span style="color:#fff000">小</span>
+		<span style="color:#00cccc">游</span>
+		<span style="color:#ff0000">戏</span>
+	</a>
+	<div style="height:3px;width:100%;background-color:#aaaaaa;" align="center"></div>
+	<div style="height:3px;width:100%;background-color:#ffffff;" align="center"></div>
+</div>
+<a href="#top"><div id="topbutton" style="display:hidden"></div></a>
+	<p class="header">
+	SCORE:<span id="score01">0</span>
+	BEST SCORE:<span id="score04">0</span>
+	</p>
+	<div class="all">
+		<div class="cell n2" id="c00">2</div>
+		<div class="cell n4" id="c01">4</div>
+		<div class="cell n8" id="c02">8</div>
+		<div class="cell n16" id="c03">16</div>
+		<div class="cell n32" id="c10">32</div>
+		<div class="cell n64" id="c11">64</div>
+		<div class="cell n1024" id="c12">1024</div>
+		<div class="cell n2048" id="c13">2048</div>
+		<div class="cell n4096" id="c20">4096</div>
+		<div class="cell n8192" id="c21">8192</div>
+		<div class="cell" id="c22"></div>
+		<div class="cell" id="c23"></div>
+		<div class="cell" id="c30"></div>
+		<div class="cell" id="c31"></div>
+		<div class="cell" id="c32"></div>
+		<div class="cell" id="c33"></div>
+	</div>
+	<a href="javascript:hack()">hack</a>
+	<a href="javascript:loop()" oncontextmenu="this.style.display='none';">hack loop</a>
+	<div class="gameover" id="gameover">
+		<p>
+			GAME OVER!<br />
+			SCORE: <span id="score02">0</span><br />
+			<span style="font-size:25px;">BEST SCORE:</span><span id="score03" style="font-size:28px;">0</span><br />
+			<a href="javascript:game.start()">TRY AGAIN</a>
+		</p>
+	</div>
+	<script>
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+         }
+        if (c.indexOf(name)  == 0) {
+            return c.substring(name.length, c.length);
+         }
+    }
+    return 0;
+}
+
+alert("你的目标：合成2048方块！");
+if (!document.cookie)
+{
+	setCookie("s",0,365)
+}
+document.getElementById("score03").innerHTML = document.getElementById("score04").innerHTML=getCookie("s");
+
+var game = {
+	data : [],
+	score : 0,
+	gamerunning : 1,
+	gameover : 0,
+	status : 0,
+	start : function(){
+		this.status = this.gamerunning;
+		this.score = 0;
+		this.data = [
+			[0,0,0,0],
+			[0,0,0,0],
+			[0,0,0,0],
+			[0,0,0,0]
+		];
+		this.randomNum();
+		this.randomNum();
+		this.dataView();
+	},
+	randomNum: function(){
+		while(true){
+			var r = Math.floor( Math.random() * 4 );
+			var c = Math.floor( Math.random() * 4 );
+
+			if(this.data[r][c] == 0){
+				var num = Math.random() > 0.3 ? 2 : 4;
+				this.data[r][c] = num;
+				break;
+			}
+		}
+	},
+	dataView: function(){
+		for(var r = 0; r < 4; r++){
+			for(var c = 0; c < 4; c++){
+				var div = document.getElementById("c" + r + c);
+				if(this.data[r][c] != 0){
+					div.innerHTML = this.data[r][c];
+					div.className = "cell n" + this.data[r][c];
+				}else{
+					div.innerHTML = "";
+					div.className = "cell"
+				}
+			}
+		}
+		document.getElementById("score01").innerHTML = this.score;
+		if(this.status == this.gamerunning){
+			document.getElementById("gameover").style.display = "none";
+		}else{
+			document.getElementById("gameover").style.display = "block";
+			document.getElementById("score02").innerHTML = this.score;
+			document.getElementById("score03").innerHTML = document.getElementById("score04").innerHTML = Math.max(
+				this.score,
+				parseInt(document.getElementById("score03").innerHTML,10),
+				getCookie("s")
+			);
+			setCookie("s",Math.max(
+				this.score,
+				parseInt(document.getElementById("score03").innerHTML,10)
+			),365);
+		}
+	},
+	isgameover: function(){
+		for(var r = 0; r < 4; r++){
+			for(var c = 0; c < 4; c++){
+				if(this.data[r][c] == 0){
+					return false;
+				}
+				if(c < 3){
+					if(this.data[r][c] == this.data[r][c+1]){
+						return false;
+					}
+				}
+				if(r < 3){
+					if(this.data[r][c] == this.data[r+1][c]){
+						return false;
+					}
+				}
+			}
+		}
+		return true;
+	},
+	moveLeft: function(){
+		var before = String(this.data);
+		for(var r = 0;r < 4;r ++){
+			this.moveLeftInRow(r);
+		}
+		var after = String(this.data);
+		if(before != after){
+			this.randomNum();
+			if(this.isgameover()){
+				this.status = this.gameover
+			}
+			this.dataView();
+		}
+	},
+	moveLeftInRow: function(r){
+		for(var c = 0; c < 3; c++){
+			var nextc = this.getNextinRow(r,c);
+			if(nextc != -1){
+				if(this.data[r][c] == 0){
+					this.data[r][c] = this.data[r][nextc];
+					this.data[r][nextc] = 0;
+					c --;
+				}else if(this.data[r][c] == this.data[r][nextc]){
+					this.data[r][c] *= 2;
+					this.data[r][nextc] = 0;
+					this.score += this.data[r][c];
+				}
+			}else{
+				break;
+			}
+		}
+	},
+	getNextinRow: function(r,c){
+		for(var i = c + 1; i < 4; i++){
+			if(this.data[r][i] != 0){
+				return i;
+			}
+		}
+		return -1;
+	},
+	moveRight: function(){
+		var before = String(this.data);
+		for(var r = 0; r < 4; r++){
+			this.moveRightInRow(r);
+		}
+		var after = String(this.data);
+		if(before != after){
+			this.randomNum();
+			if(this.isgameover()){
+				this.status = this.gameover;
+			}
+			this.dataView();
+		}
+	},
+	moveRightInRow: function(r){
+		for(var c = 4; c > 0; c--){
+			var prevc = this.getPrevInRow(r,c);
+			if(prevc != -1){
+				if(this.data[r][c] == 0){
+					this.data[r][c] = this.data[r][prevc];
+					this.data[r][prevc] = 0;
+					c ++
+				}else if(this.data[r][c] == this.data[r][prevc]){
+					this.data[r][c] *= 2;
+					this.data[r][prevc] = 0;
+					this.score += this.data[r][c];
+				}
+			}else{
+				break;
+			}
+		}
+	},
+	getPrevInRow: function(r,c){
+		for(var i = c - 1; i >= 0; i--){
+			if(this.data[r][i] != 0){
+				return i;
+			}
+		}
+		return -1;
+	},
+	moveUp: function(){
+		var before = String(this.data);
+		for(var c = 0; c < 4; c++){
+			this.moveUpInCol(c);
+		}
+		var after = String(this.data);
+		if(before != after){
+			this.randomNum();
+			if(this.isgameover()){
+				this.status = this.gameover;
+			}
+			this.dataView();
+		}
+	},
+	moveUpInCol: function(c){
+		for(var r = 0;r < 4; r++){
+			var nextr = this.getNextInCol(r,c);
+			if(nextr != -1){
+				if(this.data[r][c] == 0){
+					this.data[r][c] = this.data[nextr][c];
+					this.data[nextr][c] = 0;
+					r -- ;
+				}else if(this.data[r][c] == this.data[nextr][c]){
+					this.data[r][c] *= 2;
+					this.data[nextr][c] = 0;
+					this.score += this.data[r][c];
+				}
+			}else{
+				break;
+			}
+		}
+	},
+	getNextInCol: function(r,c){
+		for(var i = r + 1; i < 4; i++){
+			if(this.data[i][c] != 0){
+				return i;
+			}
+		}
+		return -1;
+	},
+	moveDown: function(){
+		var before = String(this.data);
+		for(var c = 0;c < 4; c++){
+			this.moveDownInCol(c);
+		}
+		var after = String(this.data);
+		if(before != after){
+			this.randomNum();
+			if(this.isgameover()){
+				this.status = this.gameover;
+			}
+			this.dataView();
+		}
+	},
+	moveDownInCol: function(c){
+		for(var r = 3; r >=0; r--){
+			var prev = this.getPrevIncol(r,c);
+			if(prev != -1){
+				if(this.data[r][c] == 0){
+					this.data[r][c] = this.data[prev][c];
+					this.data[prev][c] = 0;
+					r -- ;
+				}else if(this.data[r][c] == this.data[prev][c]){
+					this.data[r][c] *= 2;
+					this.data[prev][c] = 0;
+					this.score += this.data[r][c];
+				}
+			}else{
+				break;
+			}
+		}
+	},
+	getPrevIncol: function(r,c){
+		for(var i = r - 1; i >= 0; i--){
+			if(this.data[i][c] != 0){
+				return i;
+			}
+		}
+		return -1;
+	},
+}
+function hack(n){
+	if (!n){
+		n=9999;
+	}
+	for(var i=0,r=0;i<n&&game.status;i++){
+		r=Math.floor(Math.random()*4);
+		if(r==0){
+			game.moveLeft();
+		}else if(r==1){
+			game.moveRight();
+		}else if(r==2){
+			game.moveUp();
+		}else if(r==3){
+			game.moveDown();
+		}
+	}
+}
+function loop(){
+	var pass=parseInt(prompt('pass value?',2000),10);
+	var i=0;
+	while(game.score<pass){
+		while(game.status){
+			hack(1);
+		}
+		game.start();
+		console.log((++i)+':'+game.score);
+	}
+	game.start();
+}
+console.log(game.data)
+console.log(game.status);
+console.log(game.score);
+document.onkeydown = function(){
+	if(event.keyCode == 37||event.keyCode == 65||event.keyCode == 91){//a
+		game.moveLeft();
+	}else if(event.keyCode == 38||event.keyCode == 87||event.keyCode == 113){//w
+		game.moveUp()
+	}else if(event.keyCode == 39||event.keyCode == 68||event.keyCode == 94){//d
+		game.moveRight()
+	}else if(event.keyCode == 40||event.keyCode == 83||event.keyCode == 109){//s
+		game.moveDown()
+	}
+}
+var startX;
+var startY;
+var endX;
+var endY;
+document.addEventListener('touchstart',function(){
+	console.log(event);
+	startX = event.touches[0].pageX;
+	startY = event.touches[0].pageY;
+})
+document.addEventListener("touchend",function(){
+	console.log(event);
+	endX = event.changedTouches[0].pageX;
+	endY = event.changedTouches[0].pageY;
+	var X = endX - startX;
+	var Y = endY - startY
+	var absX = Math.abs(X) > Math.abs(Y);
+	var absY = Math.abs(Y) > Math.abs(X);
+	if(X > 0 && absX){
+		game.moveRight()
+	}else if(X < 0 && absX){
+		game.moveLeft()
+	}if(Y > 0 && absY){
+		game.moveDown()
+	}if(Y < 0 && absY){
+		game.moveUp()
+	}
+})
+game.start();
+	</script>
+<script>
+(function(){
+	var topE=document.getElementById("topbutton");
+	window.onload=document.body.onscroll=function(){
+		if(window.scrollY>10){
+			topE.style.display="block"
+		}else{
+			topE.style.display="none"
+		}
+	}
+})()
+</script>
+</body>
+</html>

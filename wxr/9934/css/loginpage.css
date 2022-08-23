@@ -1,0 +1,45 @@
+body{
+	/* defined 'font-family' in header.css */
+	font-size:14px;
+}
+#content{
+	margin:auto;
+	border:0px;
+	padding:0px;
+}
+#main{
+	margin:0px;
+	width:241px;
+}
+#login{
+	border:5px solid #aaa;
+	margin:0px;/* margin on header is 10px, so 0px */
+	padding:10px;
+	background-color:#eee;
+	width:241px;
+}
+#pwdshow #pwdshow2 #oldshow{
+	display:block;
+	background-color:#fff;
+	cursor:text;
+	margin:auto 0px;
+	font:400 13px '新宋体','宋体';
+	padding:1px 2px;
+	border:1px solid #767676;
+	border-radius:2px;
+	width:158.8px;
+	height:18px;
+	box-shadow:1px 1px #fff;
+}
+#pwdact #pwdact2 #oldact{
+	width:0px;
+	margin:0px;
+	border:0px;
+	padding:0px;
+}
+.layout-table{
+	border-width:0px;
+	margin:0px;
+	border:0px;
+	padding:0px;
+}

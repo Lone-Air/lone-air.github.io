@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>文件读写测试</title>
+<link rel="stylesheet" type="text/css" href="../css/header.css" />
+<!--[i f IE]><script type="text/javascript">
+	console.log("此为IE版本，可能会不稳定")
+</script><![endif]-->
+</head>
+<body>
+<div id="header">
+	<a href="./">
+		<span style="color:#ff0000">9</span>
+		<span style="color:#0000ff">9</span>
+		<span style="color:#00ff00">3</span>
+		<span style="color:#ff00ff">4</span>
+		<span style="color:#fff000">小</span>
+		<span style="color:#00cccc">游</span>
+		<span style="color:#ff0000">戏</span>
+	</a>
+	<div style="height:3px;width:100%;background-color:#aaaaaa;" align="center"></div>
+	<div style="height:3px;width:100%;background-color:#ffffff;" align="center"></div>
+</div>
+<a href="#top"><div id="topbutton" style="display:hidden"></div></a>
+<script>
+(function(){
+	var topE=document.getElementById("topbutton");
+	window.onload=document.body.onscroll=function(){
+		if(window.scrollY>10){
+			topE.style.display="block"
+		}else{
+			topE.style.display="none"
+		}
+	}
+})()
+</script>
+
+
+
+
+
+
+
+
+	<table width="392" border="1">
+		<tr>
+			<td height="24" colspan="2">
+				<form name="form5" method="post" action="">
+					文件路径：<input name="text1" type="textfield" value="" size="40">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td width="207" height="163">
+				<form name="form3" method="post" action="">
+					<textarea name="textarea1" cols="30" rows="10"></textarea>
+				</form>
+			</td>
+			<td>
+				<form name="form4" method="post" action="">
+					<textarea name="textarea2" rows="10"></textarea>
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td height="28">
+				<form name="form1" method="post" action="">
+					<input type="button" name="Button" value="读取" onclick="run(0)">
+				</form>
+			</td>
+			<td>
+				<form name="form2" method="post" action="">
+					<input type="button" name="Submit2" value="д��" onclick="run(1)">
+					<input type="button" name="Button" value="���" onclick="run(2)">
+				</form>
+			</td>
+		</tr>
+	</table>
+	<script language="JavaScript">
+function TextStreamTest(fname,Addname,n){
+	var fso,f,ts,s;
+	var ForRWA=0,ForReading=1,ForWriting=2,ForAppending=8;
+	var TristateUseDefault=-2,TristateTrue=-1,TristateFalse=0;
+	fso=new ActiveXObject("Scripting.FileSystemObject");
+	var s1=Addname.innerHTML;
+	if(fname.value!=""){
+		f=fso.GetFile(fname.value);
+		switch(n){
+			case 1:ForRWA=ForWriting;break;
+			case 2:ForRWA=ForAppending;break;
+		}
+		if(n>0){
+			ts=f.OpenAsTextStream(ForRWA,TristateUseDefault);
+			var s1=Addname.innerHTML;
+			ts.Write(s1);
+			s=ts.ReadLine();
+			ts.Close();
+		}
+		ts=f.OpenAsTextStream(ForReading,TristateUseDefault);
+		s=ts.ReadLine();
+		ts.Close();
+	}
+	return(s);
+}
+function run(n){
+	document.form3.textarea1.innerHTML=TextStreamTest(document.form5.text1,document.form4.textarea2,n);
+}
+	</script>
+</body>
+</html>

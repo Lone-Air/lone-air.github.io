@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>控制台</title>
+<link rel="stylesheet" type="text/css" href="../css/header.css" />
+<link rel="stylesheet" type="text/css" href="../css/console.css" />
+<script>
+//光标
+document.onmousemove=function(e){
+	var cur=document.getElementById("cur");
+	cur.style.left=e.clientX+"px";
+	cur.style.top=e.clientY+"px";
+};
+var userName="admin";
+/*
+var userName=prompt("Enter your ID:","");
+if(userName===""||userName===null){
+	confirm("Can not signin");
+	location.reload(true);
+}
+*/
+function subm(con){
+	var otp=document.getElementById("otp");
+	otp.value+=("\n>@"+userName+">  "+con.value.trim().replace(/\</g,"&lt;"));
+	con.scrollTop=con.scrollHeight;
+
+	var s=con.value.substring(0,(con.value+" ").indexOf(" ")).trim().toLowerCase(); //获取语句主体，去空格，小写
+	if(s=="")return con.value=""; //不能为空
+	if(s.search(/[^a-z]/)>-1){otp.value+=("\nError: Invalid value '"+s+"'");return con.value="";} //无效字符
+	var arg=con.value.split(" ").slice(1); //参数
+	con.value="";
+
+//	逻辑部分
+	var vars={};
+	switch(s){
+		case "reload":
+			location.reload(true);
+		case "cls":
+			otp.value="";
+			break;
+		case "new":
+			var foo=window.open("console.html","控制台","");
+			console.log(foo)
+			setTimeout(1000,foo.close());
+			if(arg.length){
+				foo.document.getElementById("con").value=arg.join(" ");
+				foo.subm(foo.document.getElementById("con"));
+			}
+			//delete foo;
+			break;
+		case "set":
+			vars["prog_$"+arg[0]]=args.slice(1).join(" ");
+			otp.value+=("\nThe new variable '"+arg[0]+"' is "+arg.slice(1).join(" "));
+		default:
+			otp.value+=("\nError: '"+s+"' is not defined");
+	}
+}
+</script>
+</head>
+<body>
+<div id="header">
+	<a href="./">
+		<span style="color:#ff0000">9</span>
+		<span style="color:#0000ff">9</span>
+		<span style="color:#00ff00">3</span>
+		<span style="color:#ff00ff">4</span>
+		<span style="color:#fff000">小</span>
+		<span style="color:#00cccc">游</span>
+		<span style="color:#ff0000">戏</span>
+	</a>
+	<div style="height:3px;width:100%;background-color:#aaaaaa;" align="center"></div>
+	<div style="height:3px;width:100%;background-color:#ffffff;" align="center"></div>
+</div>
+<a href="#top"><div id="topbutton" style="display:hidden"></div></a>
+<script>
+(function(){
+	var topE=document.getElementById("topbutton");
+	window.onload=document.body.onscroll=function(){
+		if(window.scrollY>10){
+			topE.style.display="block"
+		}else{
+			topE.style.display="none"
+		}
+	}
+})()
+</script>
+
+<label for="con">
+<div class="big">
+	<textarea id="otp" rows="12" cols="64" readonly >
+9934console [版本 2.4.17]
+9934保留所有权利
+	</textarea>
+	<br />
+	<input type="text" id="con" size="64" onkeydown="if(event.keyCode==13)subm(this);"/>
+</div>
+</label>
+<div id="cur"></div>
+<script>
+(function(){
+	var topE=document.getElementById("topbutton");
+	window.onload=document.body.onscroll=function(){
+		if(window.scrollY>10){
+			topE.style.display="block"
+		}else{
+			topE.style.display="none"
+		}
+	}
+})()
+</script>
+</body>
+</html>

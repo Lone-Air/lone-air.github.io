@@ -1,0 +1,10 @@
+* {
+	cursor:url("../lib/ico/arrow1.ico"),auto;
+}
+#content >div {
+	height:400px;
+	width:400px;
+	margin:10px;
+	border:5px solid #ff0000;
+	padding:5px;
+}

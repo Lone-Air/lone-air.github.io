@@ -1,0 +1,21 @@
+/* 光标 */
+#cur{
+	z-index:-99;
+	position:fixed;
+	top:0px;
+	left:0px;
+	height:16px;
+	width:16px;
+	background-image:url("../lib/pic/9934_16R.gif");
+}
+#otp{
+	resize:none
+}
+.big{
+	position:fixed;
+	top:5px;
+	right:0px;
+	bottom:0px;
+	left:5px;
+	cursor:none;
+}

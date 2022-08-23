@@ -1,0 +1,137 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>login</title>
+	<link rel="stylesheet" type="text/css" href="../css/header.css" />
+	<link rel="stylesheet" type="text/css" href="../css/loginpage.css" />
+<!--[if IE]>
+<script type="text/javascript">alert("此为IE版本，可能会不稳定")</script>
+<![endif]-->
+</head>
+<body>
+<div id="header">
+	<a href="./">
+		<span style="color:#ff0000">9</span>
+		<span style="color:#0000ff">9</span>
+		<span style="color:#00ff00">3</span>
+		<span style="color:#ff00ff">4</span>
+		<span style="color:#fff000">小</span>
+		<span style="color:#00cccc">游</span>
+		<span style="color:#ff0000">戏</span>
+	</a>
+	<div style="height:3px;width:100%;background-color:#aaaaaa;" align="center"></div>
+	<div style="height:3px;width:100%;background-color:#ffffff;" align="center"></div>
+</div>
+<a href="#top"><div id="topbutton" style="display:hidden"></div></a>
+<script>
+(function(){
+	var topE=document.getElementById("topbutton");
+	window.onload=document.body.onscroll=function(){
+		if(window.scrollY>10){
+			topE.style.display="block"
+		}else{
+			topE.style.display="none"
+		}
+	}
+})()
+</script>
+
+<div id="content" align="center">
+	<div id="login">
+		<form id="main" method="post" action="login.jsp">
+			<table class="layout-table">
+				<tr>
+					<td>账号：</td>
+					<td>
+						<input type="text" id="username" name="username" />
+					</td>
+				</tr>
+				<tr>
+					<td>密码：</td>
+					<td>
+						<div id="pwdshow"></div>
+						<input type="text" id="pwdact" />
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						<input type="button" value="清空密码" id="reset" />
+						<input type="submit" value="登录" />
+					</td>
+				</tr>
+			</table>
+			<input type="hidden" id="password" name="password" />
+		</form>
+	</div>
+	<a href="signup.html">没有账号？注册一个</a>
+</div>
+
+<script>
+var pwdshow	=document.getElementById("pwdshow"),
+	pwdact	=document.getElementById("pwdact"),
+	pwdsubm	=document.getElementById("password"),
+	pwdrst	=document.getElementById("reset"),
+	pwdv	="";
+
+pwdshow.onclick=function(){
+	pwdact.focus();
+}
+pwdact.onfocus=function(){
+	pwdshow.style.padding="0px 1px";
+	pwdshow.style.border="2px solid #000";
+}
+pwdact.onblur=function(){
+	pwdshow.style.padding="1px 2px";
+	pwdshow.style.border="1px solid #767676";
+}
+pwdact.oninput=function(){
+	pwdact.value=pwdact.value.replace(/[^a-zA-Z0-9+=_-]/g,'');	// 字母、数字、加号、等号、下划线、减号，全局匹配
+	if(pwdact.value.length==1){
+		pwdv+=pwdact.value;
+	}
+	pwdact.value="";
+	pwdshow.innerText="*".repeat(Math.min(pwdv.length,25));
+	pwdsubm.value=pwdv;
+}
+pwdrst.onclick=function(){
+	pwdshow.innerText=pwdact.value=pwdsubm=pwdv="";
+	pwdact.focus();
+}
+</script>
+
+<div draggable="true">🔨</div>
+<div id="drop1" style="display:none;width:100px;height:100px;padding:0;border:1px dotted #888;"
+	 ondrop="drop(event)" ondragover="event.preventDefault();"></div>
+<input type="text" id="awa" style="display:none;width:0;border:0;padding:0;" />
+<script>
+var t=0;
+document.body.onkeydown=function(e){
+	e=e||window.event;
+	if(e.ctrlKey){
+		t=1;
+	}else if(t==1&&e.shiftKey){
+		t=2;
+		document.getElementById("drop1").style.display="inline-block";
+	}else{
+		t=0
+	}
+}
+function drop(ev){
+	ev.preventDefault();
+	if(t==2){
+		document.getElementById("awa").style.display="inline";
+		document.getElementById("awa").focus();
+	}
+}
+document.getElementById("awa").onkeyup=function(){
+	if(document.getElementById("awa").value=="surprise"){
+		main.onsubmit=function(){
+			location="../res/";
+			return false;
+		}
+	}
+}
+</script>
+</body>
+</html>

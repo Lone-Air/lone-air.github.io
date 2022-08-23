@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>9934主页</title>
+<link rel="stylesheet" type="text/css" href="../css/header.css" />
+<link rel="stylesheet" type="text/css" href="../css/indexpage.css" />
+<!--[if IE]><script type="text/javascript">
+	console.log("此为IE版本，可能会不稳定")
+</script><![endif]-->
+</head>
+<body>
+<div id="header">
+	<a href="./">
+		<span style="color:#ff0000">9</span>
+		<span style="color:#0000ff">9</span>
+		<span style="color:#00ff00">3</span>
+		<span style="color:#ff00ff">4</span>
+		<span style="color:#fff000">小</span>
+		<span style="color:#00cccc">游</span>
+		<span style="color:#ff0000">戏</span>
+	</a>
+	<div style="height:3px;width:100%;background-color:#aaaaaa;" align="center"></div>
+	<div style="height:3px;width:100%;background-color:#ffffff;" align="center"></div>
+</div>
+<a href="#top"><div id="topbutton" style="display:hidden"></div></a>
+<script>
+(function(){
+	var topE=document.getElementById("topbutton");
+	window.onload=document.body.onscroll=function(){
+		if(window.scrollY>10){
+			topE.style.display="block"
+		}else{
+			topE.style.display="none"
+		}
+	}
+})()
+</script>
+
+<div id="content" align="center">
+	<div>
+		<a target="_blank" href="minigames/2048.html" title="2048游戏">
+			<img src="../lib/pic/2048.jpg" alt="2048" />
+		</a>
+	</div>
+	<div>
+		<a target="_blank" href="minigames/func.html" title="函数图">
+			<img src="../lib/pic/func.jpg" alt="函数绘制" />
+		</a>
+	</div>
+	<!-- <div>
+		<a target="_blank" href="minigames/func.html" title="函数(隐函数)图">
+			<img src="../lib/pic/func.jpg" alt="函数绘制" />
+		</a>
+	</div>
+ --></div>
+</body>
+</html>
