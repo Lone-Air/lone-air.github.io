@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>awa</title>
+<script>
+window.onerror=(*a)=>alert(a);
+</script>
+<style>
+div#main>div{
+    height:200;
+    width:800;
+    font-size:100;
+    text-align:right;
+    padding-right:24;
+}
+</style>
+</head>
+<body>
+<div id='main'>
+<!--
+<div style='background-color:rgb(240,65,85)'>1</div>
+<div style='background-color:rgb(184,50,65)'>2</div>
+<div style='background-color:rgb(184,187,222)'></div>
+<div style='background-color:rgb(188,194,210)'></div>
+<div style='background-color:hsl(357,60%,41%,1)'>3</div>
+<div style='background-color:hsl(357,43%,29%,1)'>4</div>
+<br><br>
+<div style='background-color:rgb(97,43,57)'>5</div>
+-->
+</div>
+<input id='num' />
+<input id='r' />
+<input id='g' />
+<input id='b' />
+<button id='yes'>ok</button>
+<script>
+alert('start');
+
+function* range(a,b,c){
+if(c===undefined){
+c=[1,-1][a>b];
+}
+if(b===undefined){
+a,b=0,a;
+}
+while(a*c<b*Math.abs(c)){
+yield a;
+a+=c;
+}
+}
+
+const list=[];
+const $=(x)=>document.getElementById(x);
+const main=$('main');
+const num=$('num');
+const r=$('r');
+const g=$('g');
+const b=$('b');
+const yes=$('yes');
+
+add=()=>{
+R,G,BParseInt(r.value)
+};
+yes.addEventListener('click',add);
+
+alert('end');
+</script>
+</body>
+</html>
